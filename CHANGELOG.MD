@@ -1,3 +1,5 @@
+#ICT302 Project Changelog
+
 Update 9/23/2023 [Jinwei]
 
 - Added process function for import
