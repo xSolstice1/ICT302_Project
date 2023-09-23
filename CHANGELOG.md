@@ -1,4 +1,4 @@
-#ICT302 Project Changelog
+# ICT302 Project Changelog
 
 Update 9/23/2023 [Jinwei]
 
