@@ -1,0 +1,29 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container content">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card login-card">
+                <div class="card-header">
+                    <h2 class="mb-4">Login</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Login" asp-action="Login" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="Username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="Password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

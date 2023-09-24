@@ -1,29 +1,32 @@
-﻿@model LoginModel
-@{
-    ViewData["Title"] = "Login";
-}
+﻿@model IFormFile
 
 <div class="container content">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-            <div class="card login-card">
-                <div class="card-header">
-                    <h2 class="mb-4">Login</h2>
-                </div>
-                <div class="card-body">
-                    <form asp-controller="Login" asp-action="Login" method="post">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="Username" placeholder="Enter your username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="Password" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
-            </div>
+    <div class="import-container">
+    <h2 class="mb-4">Import Data</h2>
+
+    <form action="ProcessImport" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="fileInput" class="form-label">Select files to upload (up to 5 files):</label>
+            <input type="file" class="form-control" id="fileInput" name="file" multiple accept=".csv, .xls, .xlsx" />
         </div>
+
+        <button type="submit" class="btn btn-primary">Upload Files</button>
+    </form>
+
+    <br /> <br /><br />
+
+    <h2 class="mb-4">Merge Data</h2>
+
+    <div class="mb-3">
+        <label for="joinKey" class="form-label">Select a join key:</label>
+        <select class="form-select" id="joinKey" name="joinKey">
+            <!-- Populate options dynamically based on the CSV data -->
+            <option value="column1">Column 1</option>
+            <option value="column2">Column 2</option>
+        </select>
+    </div>
+        
+    <button type="button" class="btn btn-success">Merge CSV Files</button>
+    
     </div>
 </div>
