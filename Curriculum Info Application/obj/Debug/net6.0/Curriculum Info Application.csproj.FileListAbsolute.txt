@@ -102,3 +102,76 @@ C:\Users\xsols\OneDrive\Documents\App\bin\Debug\net6.0\runtimes\win-x86\native\M
 C:\Users\xsols\OneDrive\Documents\App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\xsols\OneDrive\Documents\App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\xsols\OneDrive\Documents\App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\appsettings.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.staticwebassets.runtime.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.exe
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.deps.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.runtimeconfig.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Curriculum Info Application.pdb
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\EPPlus.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.csproj.AssemblyReference.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.AssemblyInfoInputs.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.AssemblyInfo.cs
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.csproj.CoreCompileInputs.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.RazorAssemblyInfo.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.RazorAssemblyInfo.cs
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\scopedcss\bundle\Curriculum Info Application.styles.css
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\scopedcss\projectbundle\Curriculum Info Application.bundle.scp.css
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.csproj.CopyComplete
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\refint\Curriculum Info Application.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.pdb
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\Curriculum Info Application.genruntimeconfig.cache
+C:\Users\xsols\OneDrive\Documents\ICT302Project\CurriculumInfoApplication\obj\Debug\net6.0\ref\Curriculum Info Application.dll

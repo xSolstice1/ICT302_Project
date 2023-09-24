@@ -2868,11 +2868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+      "projectUniqueName": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\CurriculumInfoApplication\\Curriculum Info Application.csproj",
       "projectName": "Curriculum Info Application",
-      "projectPath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+      "projectPath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\CurriculumInfoApplication\\Curriculum Info Application.csproj",
       "packagesPath": "C:\\Users\\xsols\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\",
+      "outputPath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\CurriculumInfoApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\xsols\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8nVnuooH5nHMs6P4TS2lm9amstLjME4vVhSSHUlRtKnN9045mnKWMCk4i4loHig1za8qvjY90RCf0RrcBUvjcQ==",
+  "dgSpecHash": "HjfmUqhpqiNwr/zEgjVZkDzA1K8S/9gfHfkTD8u3M4oi/pwFWouhGJFbk5OhNPuSBhevgyWU/2E8r/uezONl0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+  "projectFilePath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\CurriculumInfoApplication\\Curriculum Info Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xsols\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\xsols\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
