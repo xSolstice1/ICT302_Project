@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-  "Hash": "BzMm1BmBn4zX6bQuDmMfQ99NfA6d0mes5JiCSV9QE9o=",
-=======
-  "Hash": "SbN9c3nWQPKSVKMtxypTYCKEzJ47gfb5dT2rVXFEf84=",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+  "Hash": "n8GcjKoA50suxaGPJECWoxlmRKPWCUbLwRFWB+GslfE=",
   "Source": "Curriculum Info Application",
   "BasePath": "_content/Curriculum Info Application",
   "Mode": "Default",
@@ -14,28 +10,17 @@
     {
       "Name": "Curriculum Info Application\\wwwroot",
       "Source": "Curriculum Info Application",
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "Curriculum Info Application.styles.css",
       "AssetKind": "All",
@@ -46,23 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "OriginalItemSpec": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css"
+      "OriginalItemSpec": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css"
     },
     {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-=======
-      "OriginalItemSpec": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Curriculum Info Application.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "Curriculum Info Application.bundle.scp.css",
       "AssetKind": "All",
@@ -73,23 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "OriginalItemSpec": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\css\\self.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\css\\self.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "OriginalItemSpec": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Curriculum Info Application.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\css\\self.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "css/self.css",
       "AssetKind": "All",
@@ -103,17 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\self.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\css\\site.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\css\\site.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -127,17 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\favicon.ico",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\favicon.ico",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -151,17 +102,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\images\\icon.png",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\images\\icon.png",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\images\\icon.png",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "images/icon.png",
       "AssetKind": "All",
@@ -175,17 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icon.png"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\images\\logo.png",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\images\\logo.png",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -199,17 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\js\\site.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\js\\site.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -223,16 +153,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -246,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -263,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -280,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -297,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -314,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -331,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -348,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -365,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -382,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -399,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -416,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -433,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -450,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -467,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -484,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -501,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -518,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -535,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -552,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -569,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -586,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -603,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -620,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -637,11 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -655,17 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -679,17 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -703,17 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -727,17 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -751,17 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -775,17 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -799,17 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -823,425 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1255,17 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1279,17 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1303,17 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1327,17 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1351,17 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1375,17 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1399,17 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1423,17 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1447,17 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1471,17 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1495,17 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1519,17 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1543,16 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1566,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1583,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1600,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1617,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1634,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1651,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1668,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1685,11 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1703,17 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1727,17 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1751,17 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/staticwebassets.build.json
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Curriculum Info Application",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\wwwroot\\",
->>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/staticwebassets.build.json
+      "ContentRoot": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\wwwroot\\",
       "BasePath": "_content/Curriculum Info Application",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1773,142 +1120,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation/LICENSE.md",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "SourceId": "Curriculum Info Application",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\wwwroot\\",
-      "BasePath": "_content/Curriculum Info Application",
-      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     }
   ]
 }
