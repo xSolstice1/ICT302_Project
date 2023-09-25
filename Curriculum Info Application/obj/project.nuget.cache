@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uSkukKJMo+BGLfX30+YsadhTYF4tK9uvbHS7O780lbKCPwkcZknANwKLFkUnYj0zksOvjc2LlWvi+S7cVgaLJA==",
+  "dgSpecHash": "ef3/dO6bMnB91w/YwdKkC0RFXvKH5EHFbHVe8H0MfeyzBQL0KWZvUWdKMvkgmxXRPHt/2lp5bl7pYlifcFgm7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xsols\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\xsols\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\xsols\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\xsols\\.nuget\\packages\\epplus\\6.2.9\\epplus.6.2.9.nupkg.sha512",
     "C:\\Users\\xsols\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\xsols\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
