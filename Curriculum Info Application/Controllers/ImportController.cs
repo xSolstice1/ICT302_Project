@@ -21,23 +21,46 @@ namespace Curriculum_Info_Application.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessImport(List<IFormFile> files)
         {
+            //temporary solution for duplicate table
+            if (TableExists("myDynamicTable",connectionString) == true)
+            {
+                using (SqlConnection connect = new SqlConnection(connectionString))
+                {
+                    connect.OpenAsync();
+                    string dropQuery = "DROP TABLE myDynamicTable";
+
+                    using (SqlCommand command = new SqlCommand(dropQuery,connect))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+
             try
             {
                 List<List<string>> records = new List<List<string>>();
-
+                
                 foreach (var file in files)
                 {
-                    if (file.Length > 0)
+                    string ext = Path.GetExtension(file.FileName).ToLower();
+                    if (ext != ".xlsx" && ext != ".xls" && ext != ".csv")
                     {
-                        string fileExtension = Path.GetExtension(file.FileName).ToLower();
+                        throw new Exception("Invalid file format!"); //file validation
+                    }
+                    else
+                    {
+                        if (file.Length > 0)
+                        {
+                            string fileExtension = Path.GetExtension(file.FileName).ToLower();
 
-                        if (fileExtension == ".csv")
-                        {
-                            records.AddRange(await ReadCsvAsync(file));
-                        }
-                        else if (fileExtension == ".xlsx" || fileExtension == ".xls")
-                        {
-                            records.AddRange(await ReadExcelAsync(file));
+                            if (fileExtension == ".csv")
+                            {
+                                records.AddRange(await ReadCsvAsync(file));
+                            }
+                            else if (fileExtension == ".xlsx" || fileExtension == ".xls")
+                            {
+                                records.AddRange(await ReadExcelAsync(file));
+                            }
                         }
                     }
                 }
@@ -65,6 +88,7 @@ namespace Curriculum_Info_Application.Controllers
                 while (csv.Read())
                 {
                     var record = new List<string>();
+                    csv.ReadHeader(); //read csv header
                     for (int i = 0; i < csv.HeaderRecord.Length; i++)
                     {
                         record.Add(csv.GetField(i));
@@ -148,14 +172,15 @@ namespace Curriculum_Info_Application.Controllers
                 dataTable.Columns.Add(header);
             }
 
+            records.RemoveAt(0); //remove header from record
             foreach (var record in records)
             {
                 if (record != null)
                 {
                     DataRow row = dataTable.NewRow();
-                    foreach (var header in headerNames)
+                    for (int i=0; i<headerNames.Count; i++)
                     {
-                        row[header] = record.GetType().GetProperty(header).GetValue(record, null);
+                        row[i] = record[i];
                     }
                     dataTable.Rows.Add(row);
                 }
@@ -168,9 +193,22 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
+        public bool TableExists(string tableName, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
+                string query = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = @TableName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TableName", tableName);
+                    int tableCount = (int)command.ExecuteScalar();
 
+                    return tableCount > 0;
+                }
+            }
+        }
     }
-
 }
 

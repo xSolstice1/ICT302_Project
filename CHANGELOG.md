@@ -14,3 +14,13 @@ Password: @Testing
 
 - Added package EPPlus for excel handling
 - Added package Microsoft.Data.SqlClient for SQL connection
+
+Update 9/26/2023 [Jinwei]
+
+- Added in import logic by Tay
+- Fixed SQL connection
+- Fixed query for creating table
+- Fixed adding rows to Data Table
+- Fixed reading of CSV File (need to read header before accessing headerrecord)
+- Importing to database generally works now
+- Added temporary check for duplicate table name
