@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD:Curriculum Info Application/obj/project.nuget.cache
   "dgSpecHash": "6k0qSgnvWp3FUdGwu7CZtLi1KfhxsgZcHnm05dm11yJmBByCr7m6APzfa/Rn/1nmHiXNtJXkBnayc7AK52pr5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
+=======
+  "dgSpecHash": "8nVnuooH5nHMs6P4TS2lm9amstLjME4vVhSSHUlRtKnN9045mnKWMCk4i4loHig1za8qvjY90RCf0RrcBUvjcQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+>>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/project.nuget.cache
   "expectedPackageFiles": [
     "C:\\Users\\cckkt\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\cckkt\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

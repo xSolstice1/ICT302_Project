@@ -2868,11 +2868,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD:Curriculum Info Application/obj/project.assets.json
       "projectUniqueName": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
       "projectName": "Curriculum Info Application",
       "projectPath": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
       "packagesPath": "C:\\Users\\cckkt\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+      "projectName": "Curriculum Info Application",
+      "projectPath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\Curriculum Info Application.csproj",
+      "packagesPath": "C:\\Users\\xsols\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xsols\\OneDrive\\Documents\\App\\obj\\",
+>>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/project.assets.json
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cckkt\\AppData\\Roaming\\NuGet\\NuGet.Config",

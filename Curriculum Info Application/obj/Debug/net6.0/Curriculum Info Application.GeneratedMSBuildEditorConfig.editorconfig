@@ -9,6 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Curriculum_Info_Application
 build_property.RootNamespace = Curriculum_Info_Application
+<<<<<<< HEAD:Curriculum Info Application/obj/Debug/net6.0/Curriculum Info Application.GeneratedMSBuildEditorConfig.editorconfig
 build_property.ProjectDir = C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -45,5 +46,43 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Shared/_Layout.cshtml]
+=======
+build_property.ProjectDir = C:\Users\xsols\OneDrive\Documents\App\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\xsols\OneDrive\Documents\App
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Home/Export.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeHBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Home/Import.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/xsols/OneDrive/Documents/App/Views/Shared/_Layout.cshtml]
+>>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/Curriculum Info Application.GeneratedMSBuildEditorConfig.editorconfig
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-38sek4t0xc
