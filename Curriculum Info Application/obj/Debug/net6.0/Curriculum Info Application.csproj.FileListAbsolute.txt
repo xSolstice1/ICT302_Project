@@ -256,3 +256,6 @@ C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Applica
 C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\obj\Debug\net6.0\ref\Curriculum Info Application.dll
 =======
 >>>>>>> parent of 55ad2a5 (Renamed folder):CurriculumInfoApplication/obj/Debug/net6.0/Curriculum Info Application.csproj.FileListAbsolute.txt
+C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\obj\Debug\net6.0\Curriculum Info Application.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\obj\Debug\net6.0\refint\Curriculum Info Application.dll
+C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\obj\Debug\net6.0\Curriculum Info Application.pdb
