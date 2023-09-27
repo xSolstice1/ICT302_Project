@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Curriculum_Info_Application.Models;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -19,6 +20,7 @@ namespace Curriculum_Info_Application.Controllers
     {
         private readonly string connectionString = "Server=tcp:ict302database.database.windows.net,1433;Initial Catalog=Testing;User ID=testadmin;Password=@Testing;Encrypt=True;"; // Replace with your Azure SQL Database connection string
         private List<List<String>> columnHeadersList = new List<List<String>>();
+        private ImportModel model = new ImportModel();
 
         public IActionResult Index()
         {
@@ -82,8 +84,8 @@ namespace Curriculum_Info_Application.Controllers
                 // Check files quantity
                 if (files.Count >= 2)
                 {
-                    ViewBag.ColumnsList1 = new SelectList(columnHeadersList[0]);
-                    ViewBag.ColumnsList2 = new SelectList(columnHeadersList[1]);
+                    ViewBag.ColumnsList1 = new SelectList(model.columnHeadersList[0]);
+                    ViewBag.ColumnsList2 = new SelectList(model.columnHeadersList[1]);
                 }
                 else
                 {
@@ -113,7 +115,7 @@ namespace Curriculum_Info_Application.Controllers
                 {
                     var record = new List<string>();
                     csv.ReadHeader(); //read csv header
-                    columnHeadersList.Add(csv.HeaderRecord.ToList());
+                    model.columnHeadersList.Add(csv.HeaderRecord.ToList());
                     for (int i = 0; i < csv.HeaderRecord.Length; i++)
                     {
                         record.Add(csv.GetField(i));
@@ -140,7 +142,7 @@ namespace Curriculum_Info_Application.Controllers
                 }
 
                 // Add the header to columnHeadersList
-                columnHeadersList.Add(headerRecord);
+                model.columnHeadersList.Add(headerRecord);
                 for (int row = 1; row <= rowCount; row++)
                 {
                     var record = new List<string>();
@@ -288,7 +290,7 @@ namespace Curriculum_Info_Application.Controllers
                 return StatusCode(500, $"Internal server error: {ex}");
             }
         }
-        
+
         public IActionResult Import()
         {
             return View();
