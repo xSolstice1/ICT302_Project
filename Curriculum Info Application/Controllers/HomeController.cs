@@ -32,21 +32,6 @@ namespace Curriculum_Info_Application.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessImport(List<IFormFile> files)
         {
-            //temporary solution for duplicate table
-            if (TableExists("myDynamicTable",connectionString) == true)
-            {
-                using (SqlConnection connect = new SqlConnection(connectionString))
-                {
-                    connect.OpenAsync();
-                    string dropQuery = "DROP TABLE myDynamicTable";
-
-                    using (SqlCommand command = new SqlCommand(dropQuery,connect))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-
             try
             {
                 List<List<string>> records = new List<List<string>>();
@@ -114,19 +99,23 @@ namespace Curriculum_Info_Application.Controllers
             using (var reader = new StreamReader(file.OpenReadStream()))
             using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
             {
-                csv.Read();
-                csv.ReadHeader(); // Move this outside the loop to read the header once
+                bool check = false; //check if header read already
 
-                var record = new List<string>();
-
-                for (int i = 0; i < csv.HeaderRecord.Length; i++)
+                while (csv.Read())
                 {
-                    record.Add(csv.GetField(i));
+                    if (check == false)
+                    {
+                        csv.ReadHeader(); //read csv header
+                        model.columnHeadersList.Add(csv.HeaderRecord.ToList());
+                        check = true;
+                    }
+                    var record = new List<string>();
+                    for (int i = 0; i < csv.HeaderRecord.Length; i++)
+                    {
+                        record.Add(csv.GetField(i));
+                    }
+                    records.Add(record);
                 }
-                records.Add(record);
-
-                // Now add the header to columnHeadersList
-                model.columnHeadersList.Add(csv.HeaderRecord.ToList());
             }
 
             return records;
@@ -254,38 +243,35 @@ namespace Curriculum_Info_Application.Controllers
         {
             try
             {
-                // Assuming table1 and table2 are the tables you want to join
-                // Replace these with your actual tables and column names
                 string table1 = "MyDynamicTable1";
                 string table2 = "MyDynamicTable2";
                 string jointable = "MyJoinTable";
 
-                // Join logic based on the selected columns
                 string joinQuery = $@"
                     SELECT *
                     FROM {table1}
                     INNER JOIN {table2} ON {table1}.{selectedColumn1} = {table2}.{selectedColumn2}";
 
-                List<string> joinResults = new List<string>();
+                List<string> headerNames = new List<string>();
+                DataTable dt = new DataTable();
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
+                using (var join = new SqlCommand(joinQuery, connection))
+                using (var data = new SqlDataAdapter(join))
+                using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
                 {
                     connection.Open();
+                    data.Fill(dt);
 
-                    using (SqlCommand command = new SqlCommand(joinQuery, connection))
+                    //read column names in datatable
+                    foreach (DataColumn column in dt.Columns)
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                //Export Data
-                            }
-                        }
+                        headerNames.Add(column.ColumnName);
                     }
+                    CreateTableInDatabase(connection, jointable, headerNames);
+                    bulkCopy.DestinationTableName = jointable;
+                    bulkCopy.WriteToServer(dt);
                 }
-
-                // For demonstration purposes, let's pass the join results to the view
-                ViewBag.JoinResults = joinResults;
 
                 return View("Export"); // Create a view to display the join results
             }
@@ -307,4 +293,3 @@ namespace Curriculum_Info_Application.Controllers
 
     }
 }
-
