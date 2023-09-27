@@ -50,47 +50,50 @@ namespace Curriculum_Info_Application.Controllers
             try
             {
                 List<List<string>> records = new List<List<string>>();
-                
-                foreach (var file in files)
+
+                for (int i = 0; i < files.Count; i++)
                 {
-                    string ext = Path.GetExtension(file.FileName).ToLower();
+                    string ext = Path.GetExtension(files[i].FileName).ToLower();
                     if (ext != ".xlsx" && ext != ".xls" && ext != ".csv")
                     {
                         throw new Exception("Invalid file format!"); //file validation
                     }
                     else
                     {
-                        if (file.Length > 0)
+                        if (files[i].Length > 0)
                         {
-                            string fileExtension = Path.GetExtension(file.FileName).ToLower();
+                            records = new List<List<string>>();
+                            string fileExtension = Path.GetExtension(files[i].FileName).ToLower();
 
                             if (fileExtension == ".csv")
                             {
-                                records.AddRange(await ReadCsvAsync(file));
+                                records.AddRange(await ReadCsvAsync(files[i]));
                             }
                             else if (fileExtension == ".xlsx" || fileExtension == ".xls")
                             {
-                                records.AddRange(await ReadExcelAsync(file));
+                                records.AddRange(await ReadExcelAsync(files[i]));
+                            }
+
+                            if (records.Any())
+                            {
+                                SaveDataToAzureDatabaseAsync(records, i);
                             }
                         }
                     }
                 }
-
-                if (records.Any())
-                {
-                    await SaveDataToAzureDatabaseAsync(records);
-                }
-
+                
                 // Check files quantity
                 if (files.Count >= 2)
                 {
                     ViewBag.ColumnsList1 = new SelectList(model.columnHeadersList[0]);
                     ViewBag.ColumnsList2 = new SelectList(model.columnHeadersList[1]);
+
                 }
                 else
                 {
                     ViewBag.ColumnsList1 = new SelectList(new List<string>());
                     ViewBag.ColumnsList2 = new SelectList(new List<string>());
+                    return View("Export");
                 }
 
                 return View("Index");
@@ -111,17 +114,19 @@ namespace Curriculum_Info_Application.Controllers
             using (var reader = new StreamReader(file.OpenReadStream()))
             using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
             {
-                while (csv.Read())
+                csv.Read();
+                csv.ReadHeader(); // Move this outside the loop to read the header once
+
+                var record = new List<string>();
+
+                for (int i = 0; i < csv.HeaderRecord.Length; i++)
                 {
-                    var record = new List<string>();
-                    csv.ReadHeader(); //read csv header
-                    model.columnHeadersList.Add(csv.HeaderRecord.ToList());
-                    for (int i = 0; i < csv.HeaderRecord.Length; i++)
-                    {
-                        record.Add(csv.GetField(i));
-                    }
-                    records.Add(record);
+                    record.Add(csv.GetField(i));
                 }
+                records.Add(record);
+
+                // Now add the header to columnHeadersList
+                model.columnHeadersList.Add(csv.HeaderRecord.ToList());
             }
 
             return records;
@@ -141,8 +146,6 @@ namespace Curriculum_Info_Application.Controllers
                     headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
                 }
 
-                // Add the header to columnHeadersList
-                model.columnHeadersList.Add(headerRecord);
                 for (int row = 1; row <= rowCount; row++)
                 {
                     var record = new List<string>();
@@ -152,12 +155,14 @@ namespace Curriculum_Info_Application.Controllers
                     }
                     records.Add(record);
                 }
+
+                model.columnHeadersList.Add(headerRecord);
             }
 
             return records;
         }
 
-        private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records)
+        private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records, int i)
         {
             try
             {
@@ -167,12 +172,12 @@ namespace Curriculum_Info_Application.Controllers
 
                     // Assuming your data has headers in the first row
                     var headerNames = records.FirstOrDefault();
-
+                    i+=1;
                     // Create a table in the database dynamically based on the header names
-                    CreateTableInDatabase(connection, "MyDynamicTable", headerNames);
+                    CreateTableInDatabase(connection, "MyDynamicTable" + i, headerNames);
 
                     // Insert data into the dynamically created table
-                    InsertDataIntoDatabase(connection, "MyDynamicTable", headerNames, records);
+                    InsertDataIntoDatabase(connection, "MyDynamicTable" + i, headerNames, records);
                 }
             }
             catch (Exception ex)
@@ -251,8 +256,9 @@ namespace Curriculum_Info_Application.Controllers
             {
                 // Assuming table1 and table2 are the tables you want to join
                 // Replace these with your actual tables and column names
-                string table1 = "Table1";
-                string table2 = "Table2";
+                string table1 = "MyDynamicTable1";
+                string table2 = "MyDynamicTable2";
+                string jointable = "MyJoinTable";
 
                 // Join logic based on the selected columns
                 string joinQuery = $@"
@@ -272,9 +278,7 @@ namespace Curriculum_Info_Application.Controllers
                         {
                             while (reader.Read())
                             {
-                                // Modify this part based on your actual result processing
-                                string resultRow = $"{reader[selectedColumn1]} - {reader[selectedColumn2]}";
-                                joinResults.Add(resultRow);
+                                //Export Data
                             }
                         }
                     }
@@ -283,7 +287,7 @@ namespace Curriculum_Info_Application.Controllers
                 // For demonstration purposes, let's pass the join results to the view
                 ViewBag.JoinResults = joinResults;
 
-                return View("JoinResults"); // Create a view to display the join results
+                return View("Export"); // Create a view to display the join results
             }
             catch (Exception ex)
             {
