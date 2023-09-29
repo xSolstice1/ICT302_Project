@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Curriculum_Info_Application.Models;
+using Microsoft.Net.Http.Headers;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -66,7 +67,9 @@ namespace Curriculum_Info_Application.Controllers
                         }
                     }
                 }
-                
+
+                TempData["SuccessMessage"] = "Data imported and saved successfully.";
+
                 // Check files quantity
                 if (files.Count >= 2)
                 {
@@ -96,60 +99,76 @@ namespace Curriculum_Info_Application.Controllers
         {
             List<List<string>> records = new List<List<string>>();
 
-            using (var reader = new StreamReader(file.OpenReadStream()))
-            using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+            try
             {
-                bool check = false; //check if header read already
-
-                while (csv.Read())
+                using (var reader = new StreamReader(file.OpenReadStream()))
+                using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
                 {
-                    if (check == false)
+                    bool check = false; //check if header read already
+
+                    while (csv.Read())
                     {
-                        csv.ReadHeader(); //read csv header
-                        model.columnHeadersList.Add(csv.HeaderRecord.ToList());
-                        check = true;
+                        if (check == false)
+                        {
+                            csv.ReadHeader(); //read csv header
+                            model.columnHeadersList.Add(csv.HeaderRecord.ToList());
+                            check = true;
+                        }
+                        var record = new List<string>();
+                        for (int i = 0; i < csv.HeaderRecord.Length; i++)
+                        {
+                            record.Add(csv.GetField(i));
+                        }
+                        records.Add(record);
                     }
-                    var record = new List<string>();
-                    for (int i = 0; i < csv.HeaderRecord.Length; i++)
-                    {
-                        record.Add(csv.GetField(i));
-                    }
-                    records.Add(record);
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error reading CSV file: " + ex.Message);
             }
 
             return records;
         }
+
 
         private async Task<List<List<string>>> ReadExcelAsync(IFormFile file)
         {
-            List<List<string>> records = new List<List<string>>();
-
-            using (var package = new ExcelPackage(file.OpenReadStream()))
+            try
             {
-                var worksheet = package.Workbook.Worksheets[0]; // Assuming you're working with the first worksheet
-                var rowCount = worksheet.Dimension.Rows;
-                var headerRecord = new List<string>();
-                for (int col = 1; col <= worksheet.Dimension.Columns; col++)
-                {
-                    headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
-                }
+                List<List<string>> records = new List<List<string>>();
 
-                for (int row = 1; row <= rowCount; row++)
+                using (var package = new ExcelPackage(file.OpenReadStream()))
                 {
-                    var record = new List<string>();
+                    var worksheet = package.Workbook.Worksheets[0]; // Assuming you're working with the first worksheet
+                    var rowCount = worksheet.Dimension.Rows;
+                    var headerRecord = new List<string>();
                     for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                     {
-                        record.Add(worksheet.Cells[row, col].Text);
+                        headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
                     }
-                    records.Add(record);
+
+                    for (int row = 1; row <= rowCount; row++)
+                    {
+                        var record = new List<string>();
+                        for (int col = 1; col <= worksheet.Dimension.Columns; col++)
+                        {
+                            record.Add(worksheet.Cells[row, col].Text);
+                        }
+                        records.Add(record);
+                    }
+
+                    model.columnHeadersList.Add(headerRecord);
                 }
 
-                model.columnHeadersList.Add(headerRecord);
+                return records;
             }
-
-            return records;
+            catch (Exception ex)
+            {
+                throw new Exception("Error reading Excel file.", ex);
+            }
         }
+
 
         private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records, int i)
         {
@@ -248,12 +267,13 @@ namespace Curriculum_Info_Application.Controllers
                 string jointable = "MyJoinTable";
 
                 string joinQuery = $@"
-                    SELECT *
-                    FROM {table1}
-                    INNER JOIN {table2} ON {table1}.{selectedColumn1} = {table2}.{selectedColumn2}";
+            SELECT *
+            FROM {table1}
+            INNER JOIN {table2} ON {table1}.{selectedColumn1} = {table2}.{selectedColumn2}";
 
-                List<string> headerNames = new List<string>();
                 DataTable dt = new DataTable();
+                List<string> headerNames = new List<string>();
+                List <List<string>> tableRecords = new List<List<string>>();
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (var join = new SqlCommand(joinQuery, connection))
@@ -268,12 +288,25 @@ namespace Curriculum_Info_Application.Controllers
                     {
                         headerNames.Add(column.ColumnName);
                     }
+                    // Read the records
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        List<string> recordValues = row.ItemArray.Select(item => item.ToString()).ToList();
+                        tableRecords.Add(recordValues);
+                    }
                     CreateTableInDatabase(connection, jointable, headerNames);
                     bulkCopy.DestinationTableName = jointable;
                     bulkCopy.WriteToServer(dt);
                 }
 
-                return View("Export"); // Create a view to display the join results
+                // Populate ViewBag.TableHeaders with appropriate values
+                ViewBag.TableHeaders = headerNames.Select(header => new KeyValuePair<string, string>(header, header)).ToDictionary(x => x.Key, x => x.Value);
+
+                // Populate ViewBag.TableRecord with appropriate values
+                ViewBag.TableRecord = tableRecords.Select((record, index) => new KeyValuePair<string, List<string>>(index.ToString(), record)).ToDictionary(x => x.Key, x => x.Value);
+
+                // Redirect to the ExportController's Export action
+                return View("Export");
             }
             catch (Exception ex)
             {
@@ -281,13 +314,15 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
+
         public IActionResult Import()
         {
             return View();
         }
-
         public IActionResult Export()
         {
+            ViewBag.TableHeaders = new Dictionary<string, string>();
+            ViewBag.TableRecord = new Dictionary<string, List<string>>();
             return View();
         }
 

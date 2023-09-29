@@ -45,16 +45,21 @@ body {
 
 .export-container {
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding-top: 20px; /* Add your desired top padding */
+  padding-top: 20px;
 }
+
 .search-gadget {
-  width: 25%;
-  padding-right: 20px;
-  box-sizing: border-box;
-  position: relative;
+  flex: 0.3; /* 30% width */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding-right: 10px; /* Optional: Adjust padding */
 }
+
+.list-content {
+  flex: 7; /* 70% width */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding-left: 10px; /* Optional: Adjust padding */
+}
+
 .search-gadget h4 {
   margin-bottom: 10px;
 }

@@ -1,55 +1,48 @@
-﻿<div class="container content">
+﻿@{
+    Dictionary<string, string> tableHeaders = ViewBag.TableHeaders;
+    Dictionary<string, List<string>> tableRecords = ViewBag.TableRecord;
+}
+
+<!--div class="container content"-->
     <div class="export-container">
-            <div class="search-gadget">
-                <h4>Filter By</h4>
+        <div class="search-gadget">
+            <h4>Filter By</h4>
+            @foreach (var header in tableHeaders)
+            {
                 <div class="mb-3">
-                    <label for="unitCode">Unit Code:</label>
-                    <input type="text" id="unitCode" class="form-control" placeholder="Search by unit code">
+                    <label for="@header.Key">@header.Value:</label>
+                    <input type="text" id="@header.Key" class="form-control" placeholder="Search by @header.Value">
                 </div>
-                <div class="mb-3">
-                    <label for="status">Status:</label>
-                    <select id="status" class="form-select">
-                        <option value="">All</option>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="createdDate">Created Date:</label>
-                    <input type="date" id="createdDate" class="form-control">
-                </div>
+            }
             <button type="button" class="btn btn-primary">Search</button>
         </div>
-    <div class="list-content">x
-        <table class="table">
-            <thead>
-                <tr>
-                    <th><input type="checkbox">Column 1</th>
-                    <th><input type="checkbox">Column 2</th>
-                    <th><input type="checkbox">Column 3</th>
-                    <th><input type="checkbox">Column 4</th>
-                    <th><input type="checkbox">Column 5</th>
-                    <th><input type="checkbox">Column 6</th>
-                    <th><input type="checkbox">Column 7</th>
-                    <th><input type="checkbox">Column 8</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                    <td>Data 4</td>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                    <td>Data 7</td>
-                    <td>Data 8</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="list-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        @foreach (var header in tableHeaders)
+                        {
+                            <th><input type="checkbox">@header.Value</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var recordPair in tableRecords)
+                {
+                    <tr>
+                        @foreach (var value in recordPair.Value)
+                        {
+                            // Assuming header.Key is the column name
+                            //string columnName = header.Key;
+                            //string columnValue = recordPair.Value();
+                            <td>@value</td>
+                        }
+                    </tr>
+                }
+                </tbody>
+            </table>
             <button type="button" class="btn btn-success">Export</button>
         </div>
-        
     </div>
-    
-</div>
+<!--/div-->
