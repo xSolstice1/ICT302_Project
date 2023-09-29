@@ -100,3 +100,9 @@ body {
   width: calc(100% - 20px); /* Adjust width to prevent overlapping */
   padding: 0 10px;
 }
+
+.list-content {
+  max-width:100vw !important; 
+  max-height:80vh !important; 
+  overflow:auto;
+}

@@ -23,14 +23,14 @@
                     <tr>
                         @foreach (var header in tableHeaders)
                         {
-                            <th><input type="checkbox">@header.Value</th>
+                            <th style="white-space:nowrap !important;"><input type="checkbox">@header.Value</th>
                         }
                     </tr>
                 </thead>
                 <tbody>
                 @foreach (var recordPair in tableRecords)
                 {
-                    <tr>
+                    <tr style="line-height:auto !important;">
                         @foreach (var value in recordPair.Value)
                         {
                             // Assuming header.Key is the column name

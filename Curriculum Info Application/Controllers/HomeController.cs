@@ -287,6 +287,7 @@ namespace Curriculum_Info_Application.Controllers
                     foreach (DataColumn column in dt.Columns)
                     {
                         headerNames.Add(column.ColumnName);
+                        System.Console.WriteLine(column.ColumnName);
                     }
                     // Read the records
                     foreach (DataRow row in dt.Rows)
