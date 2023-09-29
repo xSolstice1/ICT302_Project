@@ -90,7 +90,7 @@ body {
 .export-button {
   position: absolute;
   bottom: 10px;
-  right: 10px; /* Adjust right position */
+  left: 10px; /* Adjust right position */
 }
 .bottom-buttons {
   display: flex;
