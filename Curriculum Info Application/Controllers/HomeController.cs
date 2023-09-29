@@ -111,6 +111,10 @@ namespace Curriculum_Info_Application.Controllers
                         if (check == false)
                         {
                             csv.ReadHeader(); //read csv header
+                            foreach (var header in csv.HeaderRecord)
+                            {
+                                header.Replace(".","_");
+                            }
                             model.columnHeadersList.Add(csv.HeaderRecord.ToList());
                             check = true;
                         }
@@ -145,7 +149,7 @@ namespace Curriculum_Info_Application.Controllers
                     var headerRecord = new List<string>();
                     for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                     {
-                        headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
+                        headerRecord.Add(worksheet.Cells[1, col].Text.Replace(".","_")); // Assuming header is in the first row
                     }
 
                     for (int row = 1; row <= rowCount; row++)
@@ -199,7 +203,7 @@ namespace Curriculum_Info_Application.Controllers
         {
             // Remove invalid characters from query
             List<string> sanitizedHeaderNames = headerNames
-                .Select(h => $"[{h.Replace(" ", "_").Replace("[", "").Replace("]", "")}] NVARCHAR(MAX)")
+                .Select(h => $"[{h.Replace(".","_").Replace(" ", "_").Replace("[", "").Replace("]", "")}] NVARCHAR(MAX)")
                 .ToList();
             
             string createTableQuery = $"CREATE TABLE {tableName} ({string.Join(", ", sanitizedHeaderNames)})";
