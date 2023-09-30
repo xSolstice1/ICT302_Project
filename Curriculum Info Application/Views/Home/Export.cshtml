@@ -3,6 +3,13 @@
     Dictionary<string, List<string>> tableRecords = ViewBag.TableRecord;
 }
 
+@if (TempData["ExportSuccess"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["ExportSuccess"]
+    </div>
+}
+
 <!--div class="container content"-->
     <div class="export-container">
         <div class="search-gadget">

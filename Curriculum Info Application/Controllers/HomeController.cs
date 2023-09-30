@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Curriculum_Info_Application.Models;
 using Microsoft.Net.Http.Headers;
+using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -25,6 +27,7 @@ namespace Curriculum_Info_Application.Controllers
 
         public IActionResult Index()
         {
+            TempData["SuccessMessage"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             return View();
@@ -62,7 +65,7 @@ namespace Curriculum_Info_Application.Controllers
 
                             if (records.Any())
                             {
-                                SaveDataToAzureDatabaseAsync(records, i);
+                                SaveDataToXmlAsync(records, i);
                             }
                         }
                     }
@@ -140,6 +143,7 @@ namespace Curriculum_Info_Application.Controllers
         {
             try
             {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 List<List<string>> records = new List<List<string>>();
 
                 using (var package = new ExcelPackage(file.OpenReadStream()))
@@ -173,8 +177,72 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
+        private async Task SaveDataToXmlAsync(List<List<string>> records, int i)
+        {
+            try
+            {
+                var headerNames = records.FirstOrDefault();
+                i += 1;
 
-        private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records, int i)
+                // Create XML document
+                XDocument xmlDocument = new XDocument(
+                    new XElement("Data",
+                        records.Skip(1).Select(record =>
+                            new XElement("Record",
+                                record.Select((field, index) =>
+                                    new XElement(headerNames[index], field))))));
+
+                // Save to XML file
+                string xmlFilePath = $"Data{i}.xml";
+                xmlDocument.Save(xmlFilePath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error saving data to XML: {ex.Message}");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2)
+        {
+            try
+            {
+                // Load the XML data from the two XML files
+                XDocument data1Xml = XDocument.Load("Data1.xml");
+                XDocument data2Xml = XDocument.Load("Data2.xml");
+
+                // Join the XML data based on the specified columns
+                var joinedData = from record1 in data1Xml.Descendants("Record")
+                                 join record2 in data2Xml.Descendants("Record")
+                                 on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
+                                 select new XElement("JoinedRecord",
+                                     new XElement(selectedColumn1, (string)record1.Element(selectedColumn1)),
+                                     new XElement(selectedColumn2, (string)record2.Element(selectedColumn2)),
+                                     record1.Elements().Where(e => e.Name != selectedColumn1),
+                                     record2.Elements().Where(e => e.Name != selectedColumn2));
+
+                // Create a new XML document for the joined data
+                XDocument joinedXml = new XDocument(new XElement("JoinedData", joinedData));
+
+                // Save the joined XML data to a new XML file
+                joinedXml.Save("JoinedData.xml");
+
+                TempData["SuccessMessage"] = "Data joined and saved successfully.";
+                ViewBag.ColumnsList1 = new SelectList(new List<string>());
+                ViewBag.ColumnsList2 = new SelectList(new List<string>());
+                ViewBag.TableHeaders = new Dictionary<string, string>();
+                ViewBag.TableRecord = new Dictionary<string, List<string>>();
+
+                return RedirectToAction("Index","Export");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error joining and saving data to XML: {ex.Message}");
+            }
+        }
+
+
+        /*private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records, int i)
         {
             try
             {
@@ -317,7 +385,7 @@ namespace Curriculum_Info_Application.Controllers
             {
                 return StatusCode(500, $"Internal server error: {ex}");
             }
-        }
+        }*/
 
 
         public IActionResult Import()
@@ -328,7 +396,7 @@ namespace Curriculum_Info_Application.Controllers
         {
             ViewBag.TableHeaders = new Dictionary<string, string>();
             ViewBag.TableRecord = new Dictionary<string, List<string>>();
-            return View();
+            return RedirectToAction("Index", "Export");
         }
 
     }
