@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -55,6 +57,61 @@ namespace Curriculum_Info_Application.Controllers
 
             return View("~/Views/Home/Export.cshtml");
         }
+
+        public IActionResult ExportToCsv()
+        {
+            try
+            {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                // Load the XML file
+                XDocument xmlDocument = XDocument.Load("JoinedData.xml");
+
+                // Create a new Excel package
+                using (ExcelPackage package = new ExcelPackage())
+                {
+                    // Create a worksheet
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Data");
+
+                    // Get the headers from the XML (distinct element names)
+                    var headers = xmlDocument.Descendants("JoinedRecord")
+                                              .Elements()
+                                              .Select(e => e.Name.LocalName)
+                                              .Distinct()
+                                              .ToList();
+
+                    // Write headers to the Excel worksheet
+                    for (int i = 0; i < headers.Count; i++)
+                        worksheet.Cells[1, i + 1].Value = headers[i];
+
+                    // Get the data for each record
+                    var records = xmlDocument.Descendants("JoinedRecord")
+                                              .Select(record =>
+                                                  headers.Select(header => (string)record.Element(header)).ToList())
+                                              .ToList();
+
+                    // Write records to the Excel worksheet
+                    for (int i = 0; i < records.Count; i++)
+                    {
+                        for (int j = 0; j < headers.Count; j++)
+                            worksheet.Cells[i + 2, j + 1].Value = records[i][j];
+                    }
+
+                    // Save the Excel package to a stream
+                    MemoryStream stream = new MemoryStream(package.GetAsByteArray());
+
+                    // Return the Excel file as a FileStreamResult
+                    return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "exportedData.xlsx");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["ExportError"] = "An error occurred while exporting data: " + ex.Message;
+            }
+
+            return RedirectToAction("Index", "Home"); // Redirect to the home page
+        }
+
+
     }
 }
 

@@ -10,45 +10,49 @@
     </div>
 }
 
-<!--div class="container content"-->
-    <div class="export-container">
-        <div class="search-gadget">
-            <h4>Filter By</h4>
-            @foreach (var header in tableHeaders)
-            {
-                <div class="mb-3">
-                    <label for="@header.Key">@header.Value:</label>
-                    <input type="text" id="@header.Key" class="form-control" placeholder="Search by @header.Value">
-                </div>
-            }
-            <button type="button" class="btn btn-primary">Search</button> <button type="button" class="btn btn-success">Export</button>
-        </div>
-
-        <div class="list-content">
-            <table class="table">
-                <thead>
-                    <tr>
-                        @foreach (var header in tableHeaders)
-                        {
-                            <th style="white-space:nowrap !important;"><input type="checkbox">@header.Value</th>
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach (var recordPair in tableRecords)
-                {
-                    <tr style="line-height:auto !important;">
-                        @foreach (var value in recordPair.Value)
-                        {
-                            // Assuming header.Key is the column name
-                            //string columnName = header.Key;
-                            //string columnValue = recordPair.Value();
-                            <td>@value</td>
-                        }
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
+<div class="export-container">
+    <div class="search-gadget">
+        <h4>Filter By</h4>
+        @foreach (var header in tableHeaders)
+        {
+            <div class="mb-3">
+                <label for="@header.Key">@header.Value:</label>
+                <input type="text" id="@header.Key" class="form-control" placeholder="Search by @header.Value">
+            </div>
+        }
+        <button type="button" class="btn btn-primary">Search</button>
     </div>
-<!--/div-->
+
+    <div class="list-content">
+        <table class="table" id="exportTable">
+            <thead>
+                <tr>
+                    @foreach (var header in tableHeaders)
+                    {
+                        <th style="white-space:nowrap !important;"><input type="checkbox">@header.Value</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var recordPair in tableRecords)
+            {
+                <tr style="line-height:auto !important;">
+                    @foreach (var value in recordPair.Value)
+                    {
+                        <td>@value</td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+        <button id="exportButton" class="btn btn-success">Export to Excel</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('exportButton').addEventListener('click', function () {
+        window.location.href = '@Url.Action("ExportToCsv", "Export")';
+    });
+</script>
+
+
