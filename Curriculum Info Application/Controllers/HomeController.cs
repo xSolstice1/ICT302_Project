@@ -21,13 +21,14 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly string connectionString = "Server=tcp:ict302database.database.windows.net,1433;Initial Catalog=Testing;User ID=testadmin;Password=@Testing;Encrypt=True;"; // Replace with your Azure SQL Database connection string
-        private List<List<String>> columnHeadersList = new List<List<String>>();
         private ImportModel model = new ImportModel();
+        private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' };
+        private char validChar = '_';
 
         public IActionResult Index()
         {
             TempData["SuccessMessage"] = null;
+            //TempData["ImportError"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             return View();
@@ -114,16 +115,23 @@ namespace Curriculum_Info_Application.Controllers
                         if (check == false)
                         {
                             csv.ReadHeader(); //read csv header
-                            foreach (var header in csv.HeaderRecord)
+                            /*foreach (var header in csv.HeaderRecord)
                             {
-                                header.Replace(".","_");
-                            }
+                                header.Replace(invalidChar, validChar).Replace(" ", "_").Replace("(", "_").Replace(")", "_").Replace("/", "_");
+                            }*/
                             model.columnHeadersList.Add(csv.HeaderRecord.ToList());
                             check = true;
                         }
                         var record = new List<string>();
                         for (int i = 0; i < csv.HeaderRecord.Length; i++)
                         {
+                            if(i == 0)
+                            {
+                                foreach (var invalidChar in invalidChars)
+                                {
+                                    csv.GetField(i).Replace(invalidChar, validChar);
+                                }
+                            }
                             record.Add(csv.GetField(i));
                         }
                         records.Add(record);
@@ -153,7 +161,7 @@ namespace Curriculum_Info_Application.Controllers
                     var headerRecord = new List<string>();
                     for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                     {
-                        headerRecord.Add(worksheet.Cells[1, col].Text.Replace(".","_")); // Assuming header is in the first row
+                        headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
                     }
 
                     for (int row = 1; row <= rowCount; row++)
@@ -161,6 +169,13 @@ namespace Curriculum_Info_Application.Controllers
                         var record = new List<string>();
                         for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                         {
+                            if(row == 1)
+                            {
+                                foreach (var invalidChar in invalidChars)
+                                {
+                                    worksheet.Cells[row, col].Text.Replace(invalidChar, validChar);
+                                }
+                            }
                             record.Add(worksheet.Cells[row, col].Text);
                         }
                         records.Add(record);
@@ -216,16 +231,15 @@ namespace Curriculum_Info_Application.Controllers
                                  join record2 in data2Xml.Descendants("Record")
                                  on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
                                  select new XElement("JoinedRecord",
-                                     new XElement(selectedColumn1, (string)record1.Element(selectedColumn1)),
-                                     new XElement(selectedColumn2, (string)record2.Element(selectedColumn2)),
-                                     record1.Elements().Where(e => e.Name != selectedColumn1),
-                                     record2.Elements().Where(e => e.Name != selectedColumn2));
+                                     record1.Elements(),
+                                     record2.Elements());
 
-                // Create a new XML document for the joined data
-                XDocument joinedXml = new XDocument(new XElement("JoinedData", joinedData));
+                // Process the XML to add numerical suffixes to duplicate element names
+                var processedXml = ProcessXml(joinedData);
 
-                // Save the joined XML data to a new XML file
-                joinedXml.Save("JoinedData.xml");
+                // Save the processed XML data to a new XML file
+                processedXml.Save("JoinedData.xml");
+
 
                 TempData["SuccessMessage"] = "Data joined and saved successfully.";
                 ViewBag.ColumnsList1 = new SelectList(new List<string>());
@@ -241,152 +255,40 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
-
-        /*private async Task SaveDataToAzureDatabaseAsync(List<List<string>> records, int i)
+        private XDocument ProcessXml(IEnumerable<XElement> joinedData)
         {
-            try
+            XDocument processedXml = new XDocument(new XElement("JoinedData"));
+
+            foreach (var record in joinedData)
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                var joinedRecord = new XElement("JoinedRecord");
+
+                Dictionary<string, int> elementCounts = new Dictionary<string, int>();
+                foreach (var element in record.Elements())
                 {
-                    await connection.OpenAsync();
+                    string elementName = element.Name.LocalName;
 
-                    // Assuming your data has headers in the first row
-                    var headerNames = records.FirstOrDefault();
-                    i+=1;
-                    // Create a table in the database dynamically based on the header names
-                    CreateTableInDatabase(connection, "MyDynamicTable" + i, headerNames);
-
-                    // Insert data into the dynamically created table
-                    InsertDataIntoDatabase(connection, "MyDynamicTable" + i, headerNames, records);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error saving data to the Azure SQL Database: {ex.Message}");
-            }
-        }
-
-
-        private void CreateTableInDatabase(SqlConnection connection, string tableName, List<string> headerNames)
-        {
-            // Remove invalid characters from query
-            List<string> sanitizedHeaderNames = headerNames
-                .Select(h => $"[{h.Replace(".","_").Replace(" ", "_").Replace("[", "").Replace("]", "")}] NVARCHAR(MAX)")
-                .ToList();
-            
-            string createTableQuery = $"CREATE TABLE {tableName} ({string.Join(", ", sanitizedHeaderNames)})";
-
-            using (SqlCommand command = new SqlCommand(createTableQuery, connection))
-            {
-                command.ExecuteNonQuery();
-            }
-        }
-
-        private void InsertDataIntoDatabase(SqlConnection connection, string tableName, List<string> headerNames, List<List<string>> records)
-        {
-            // Convert List<MyClass> to DataTable
-            DataTable dataTable = new DataTable();
-            foreach (var header in headerNames)
-            {
-                dataTable.Columns.Add(header);
-            }
-
-            records.RemoveAt(0); //remove header from record
-            foreach (var record in records)
-            {
-                if (record != null)
-                {
-                    DataRow row = dataTable.NewRow();
-                    for (int i=0; i<headerNames.Count; i++)
+                    if (elementCounts.ContainsKey(elementName))
                     {
-                        row[i] = record[i];
+                        int count = elementCounts[elementName];
+                        elementCounts[elementName]++;
+
+                        // Add a numerical suffix to the element name
+                        var newElementName = $"{elementName}{count}";
+                        joinedRecord.Add(new XElement(newElementName, element.Value));
                     }
-                    dataTable.Rows.Add(row);
-                }
-            }
-
-            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
-            {
-                bulkCopy.DestinationTableName = tableName;
-                bulkCopy.WriteToServer(dataTable);
-            }
-        }
-
-        public bool TableExists(string tableName, string connectionString)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string query = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = @TableName";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@TableName", tableName);
-                    int tableCount = (int)command.ExecuteScalar();
-
-                    return tableCount > 0;
-                }
-            }
-        }
-
-        [HttpPost]
-        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2)
-        {
-            try
-            {
-                string table1 = "MyDynamicTable1";
-                string table2 = "MyDynamicTable2";
-                string jointable = "MyJoinTable";
-
-                string joinQuery = $@"
-            SELECT *
-            FROM {table1}
-            INNER JOIN {table2} ON {table1}.{selectedColumn1} = {table2}.{selectedColumn2}";
-
-                DataTable dt = new DataTable();
-                List<string> headerNames = new List<string>();
-                List <List<string>> tableRecords = new List<List<string>>();
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                using (var join = new SqlCommand(joinQuery, connection))
-                using (var data = new SqlDataAdapter(join))
-                using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
-                {
-                    connection.Open();
-                    data.Fill(dt);
-
-                    //read column names in datatable
-                    foreach (DataColumn column in dt.Columns)
+                    else
                     {
-                        headerNames.Add(column.ColumnName);
-                        System.Console.WriteLine(column.ColumnName);
+                        elementCounts[elementName] = 1;
+                        joinedRecord.Add(new XElement(elementName, element.Value));
                     }
-                    // Read the records
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        List<string> recordValues = row.ItemArray.Select(item => item.ToString()).ToList();
-                        tableRecords.Add(recordValues);
-                    }
-                    CreateTableInDatabase(connection, jointable, headerNames);
-                    bulkCopy.DestinationTableName = jointable;
-                    bulkCopy.WriteToServer(dt);
                 }
 
-                // Populate ViewBag.TableHeaders with appropriate values
-                ViewBag.TableHeaders = headerNames.Select(header => new KeyValuePair<string, string>(header, header)).ToDictionary(x => x.Key, x => x.Value);
-
-                // Populate ViewBag.TableRecord with appropriate values
-                ViewBag.TableRecord = tableRecords.Select((record, index) => new KeyValuePair<string, List<string>>(index.ToString(), record)).ToDictionary(x => x.Key, x => x.Value);
-
-                // Redirect to the ExportController's Export action
-                return View("Export");
+                processedXml.Root?.Add(joinedRecord);
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex}");
-            }
-        }*/
 
+            return processedXml;
+        }
 
         public IActionResult Import()
         {

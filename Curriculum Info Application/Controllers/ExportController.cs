@@ -9,11 +9,10 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class ExportController : Controller
     {
-        private readonly string connectionString = "Server=tcp:ict302database.database.windows.net,1433;Initial Catalog=Testing;User ID=testadmin;Password=@Testing;Encrypt=True;";
-
         public IActionResult Index()
         {
             TempData["ExportSuccess"] = null;
+            TempData["ImportError"] = null;
 
             // Load the XML data from the joined XML file
             XDocument joinedXml = XDocument.Load("JoinedData.xml");
@@ -25,7 +24,10 @@ namespace Curriculum_Info_Application.Controllers
                                    .ToList();
 
             if (headers == null)
-                throw new Exception("Unable to retrieve headers from the XML data.");
+            {
+                TempData["ImportError"] = "Unable to merge the files.";
+                return RedirectToAction("Index", "Home");
+            }
 
             // Initialize a dictionary to store the header names and their corresponding values for each record
             Dictionary<string, List<string>> tableRecord = new Dictionary<string, List<string>>();
@@ -44,10 +46,7 @@ namespace Curriculum_Info_Application.Controllers
                 recordIndex++;
             }
 
-            // Populate ViewBag.TableHeaders with header names
-            //ViewBag.TableHeaders = headers.ToDictionary(header => header, header => header);
-            var distinctHeaders = headers.Distinct().ToList();
-            ViewBag.TableHeaders = distinctHeaders.ToDictionary(header => header, header => header);
+            ViewBag.TableHeaders = headers.ToDictionary(header => header, header => header);
 
             // Populate ViewBag.TableRecord with the record values
             ViewBag.TableRecord = tableRecord;
