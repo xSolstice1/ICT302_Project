@@ -10,6 +10,20 @@
     </div>
 }
 
+@if (TempData["ImportError"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ImportError"]
+    </div>
+}
+
+@if (TempData["ExportError"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ExportError"]
+    </div>
+}
+
 <div class="export-container">
     <div class="search-gadget">
         <h4>Filter By</h4>
@@ -20,16 +34,20 @@
                 <input type="text" id="@header.Key" class="form-control" placeholder="Search by @header.Value">
             </div>
         }
-        <button type="button" class="btn btn-primary">Search</button>
+        <button type="button" class="btn btn-primary" onclick="filterTable()">Search</button>
+        <button type="button" class="btn btn-secondary" onclick="clearFilters()">Clear</button>
     </div>
 
     <div class="list-content">
+        <button id="exportButton" class="btn btn-success">Export to Excel</button>
         <table class="table" id="exportTable">
             <thead>
                 <tr>
                     @foreach (var header in tableHeaders)
                     {
-                        <th style="white-space:nowrap !important;"><input type="checkbox">@header.Value</th>
+                        <th style="white-space:nowrap !important;">
+                            <input type="checkbox" class="column-checkbox" id="@header.Key" checked /> @header.Value
+                        </th>
                     }
                 </tr>
             </thead>
@@ -45,13 +63,87 @@
             }
             </tbody>
         </table>
-        <button id="exportButton" class="btn btn-success">Export to Excel</button>
     </div>
 </div>
 
 <script>
     document.getElementById('exportButton').addEventListener('click', function () {
         window.location.href = '@Url.Action("ExportToCsv", "Export")';
+    });
+
+    function filterTable() {
+        // Get all the input elements within the search gadget
+        var inputs = document.querySelectorAll('.search-gadget input[type="text"]');
+
+        // Get the table rows
+        var rows = document.querySelectorAll('#exportTable tbody tr');
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var shouldShow = true;
+
+            for (var j = 0; j < inputs.length; j++) {
+                var input = inputs[j];
+                var columnIndex = j; // Assuming the column index matches the input index
+
+                var cell = row.cells[columnIndex];
+                var cellText = cell.textContent || cell.innerText;
+
+                // Convert both the input value and cell text to lowercase for case-insensitive search
+                var inputValue = input.value.toLowerCase();
+                var cellTextLower = cellText.toLowerCase();
+
+                if (cellTextLower.indexOf(inputValue) === -1) {
+                    shouldShow = false;
+                    break;  // No need to check other inputs for this row
+                }
+            }
+
+            // Toggle row visibility based on the search result
+            row.style.display = shouldShow ? '' : 'none';
+        }
+    }
+
+    function clearFilters() {
+        // Get all the input elements within the search gadget
+        var inputs = document.querySelectorAll('.search-gadget input[type="text"]');
+
+        // Clear the input fields
+        inputs.forEach(function (input) {
+            input.value = '';
+        });
+
+        // Show all rows in the table
+        var rows = document.querySelectorAll('#exportTable tbody tr');
+        rows.forEach(function (row) {
+            row.style.display = '';
+        });
+    }
+
+    document.getElementById('exportButton').addEventListener('click', function () {
+        // Get the selected columns
+        var selectedColumns = [];
+        var checkboxes = document.getElementsByClassName('column-checkbox');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                selectedColumns.push(checkboxes[i].id);
+            }
+        }
+
+        // Get the filter values
+        var filters = {};
+        var filterInputs = document.querySelectorAll('.search-gadget input[type="text"]');
+        filterInputs.forEach(function (input) {
+            var key = input.id;
+            var value = input.value.toLowerCase();
+            filters[key] = value;
+        });
+
+        // Redirect to the export action with the selected columns and filters
+        var url = '@Url.Action("ExportToCsv", "Export")';
+        url += '?selectedColumns=' + selectedColumns.join(',');
+        url += '&filters=' + JSON.stringify(filters);
+        window.location.href = url;
     });
 </script>
 

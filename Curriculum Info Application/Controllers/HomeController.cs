@@ -16,6 +16,7 @@ using Curriculum_Info_Application.Models;
 using Microsoft.Net.Http.Headers;
 using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
+using System.Drawing.Drawing2D;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -28,9 +29,11 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Index()
         {
             TempData["SuccessMessage"] = null;
-            //TempData["ImportError"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
+            DeleteIfFileExists("Data1.xml");
+            DeleteIfFileExists("Data2.xml");
+            DeleteIfFileExists("JoinedData.xml");
             return View();
         }
 
@@ -85,7 +88,9 @@ namespace Curriculum_Info_Application.Controllers
                 {
                     ViewBag.ColumnsList1 = new SelectList(new List<string>());
                     ViewBag.ColumnsList2 = new SelectList(new List<string>());
-                    return View("Export");
+                    ViewBag.TableHeaders = new Dictionary<string, string>();
+                    ViewBag.TableRecord = new Dictionary<string, List<string>>();
+                    return RedirectToAction("Index", "Export");
                 }
 
                 return View("Index");
@@ -123,16 +128,18 @@ namespace Curriculum_Info_Application.Controllers
                             check = true;
                         }
                         var record = new List<string>();
+                        
                         for (int i = 0; i < csv.HeaderRecord.Length; i++)
                         {
-                            if(i == 0)
+                            string line = csv.GetField(i);
+                            if (i == 0)
                             {
                                 foreach (var invalidChar in invalidChars)
                                 {
-                                    csv.GetField(i).Replace(invalidChar, validChar);
+                                    line = line.Replace(invalidChar, validChar);
                                 }
                             }
-                            record.Add(csv.GetField(i));
+                            record.Add(line);
                         }
                         records.Add(record);
                     }
@@ -169,14 +176,16 @@ namespace Curriculum_Info_Application.Controllers
                         var record = new List<string>();
                         for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                         {
-                            if(row == 1)
+                            string line = worksheet.Cells[row, col].Text;
+                            if (row == 1)
                             {
+                                // Replace all invalid characters with validChar
                                 foreach (var invalidChar in invalidChars)
                                 {
-                                    worksheet.Cells[row, col].Text.Replace(invalidChar, validChar);
+                                    line = line.Replace(invalidChar, validChar);
                                 }
                             }
-                            record.Add(worksheet.Cells[row, col].Text);
+                            record.Add(line);
                         }
                         records.Add(record);
                     }
@@ -230,7 +239,7 @@ namespace Curriculum_Info_Application.Controllers
                 var joinedData = from record1 in data1Xml.Descendants("Record")
                                  join record2 in data2Xml.Descendants("Record")
                                  on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
-                                 select new XElement("JoinedRecord",
+                                 select new XElement("Record",
                                      record1.Elements(),
                                      record2.Elements());
 
@@ -239,7 +248,6 @@ namespace Curriculum_Info_Application.Controllers
 
                 // Save the processed XML data to a new XML file
                 processedXml.Save("JoinedData.xml");
-
 
                 TempData["SuccessMessage"] = "Data joined and saved successfully.";
                 ViewBag.ColumnsList1 = new SelectList(new List<string>());
@@ -257,11 +265,11 @@ namespace Curriculum_Info_Application.Controllers
 
         private XDocument ProcessXml(IEnumerable<XElement> joinedData)
         {
-            XDocument processedXml = new XDocument(new XElement("JoinedData"));
+            XDocument processedXml = new XDocument(new XElement("Data"));
 
             foreach (var record in joinedData)
             {
-                var joinedRecord = new XElement("JoinedRecord");
+                var joinedRecord = new XElement("Record");
 
                 Dictionary<string, int> elementCounts = new Dictionary<string, int>();
                 foreach (var element in record.Elements())
@@ -288,6 +296,14 @@ namespace Curriculum_Info_Application.Controllers
             }
 
             return processedXml;
+        }
+
+        private void DeleteIfFileExists(string filePath)
+        {
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
         }
 
         public IActionResult Import()
