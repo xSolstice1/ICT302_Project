@@ -12,7 +12,7 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class ExportController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             try
             {
@@ -37,8 +37,22 @@ namespace Curriculum_Info_Application.Controllers
                     return View("~/Views/Home/Export.cshtml");
                 }
 
-                // Initialize a dictionary to store the header names and their corresponding values for each record
-                Dictionary<string, List<string>> tableRecord = new Dictionary<string, List<string>>();
+                //===================================================
+                // Pager - Start
+                //===================================================
+                // Initialize pagination parameters
+                const int PageSize = 80; // Number of records per page
+                int currentPage = page ?? 1; // Default to the first page
+
+                // Calculate the number of records to skip based on the current page
+                int recordsToSkip = (currentPage - 1) * PageSize;
+
+                // Extract all records from the XML file
+                var allRecords = joinedXml.Descendants("Record")
+                                          .Select(record => headers.ToDictionary(header => header, header => (string)record.Element(header)))
+                                          .ToList();
+
+                List<KeyValuePair<string, List<string>>> tableRecord = new List<KeyValuePair<string, List<string>>>();
 
                 // Iterate over each joined record and extract values for each header
                 int recordIndex = 1;
@@ -50,18 +64,29 @@ namespace Curriculum_Info_Application.Controllers
                         recordValues.Add((string)record.Element(header));
                     }
 
-                    tableRecord.Add(recordIndex.ToString(), recordValues);
+                    tableRecord.Add(new KeyValuePair<string, List<string>>(recordIndex.ToString(), recordValues));
                     recordIndex++;
                 }
 
-                ViewBag.TableHeaders = headers.ToDictionary(header => header, header => header);
+                // Get records for the current page using Skip and Take
+                var recordsForCurrentPage = tableRecord.Skip(recordsToSkip).Take(PageSize).ToList();
 
-                // Populate ViewBag.TableRecord with the record values
-                ViewBag.TableRecord = tableRecord;
+                // Calculate pagination information
+                int totalItems = allRecords.Count;
+                int totalPages = (int)Math.Ceiling((double)totalItems / PageSize);
+
+                ViewBag.CurrentPage = currentPage;
+                ViewBag.TotalPages = totalPages;
+                //ViewBag.RecordsForCurrentPage = recordsForCurrentPage;
+                ViewBag.TableHeaders = headers.ToDictionary(header => header, header => header);
+                ViewBag.TableRecord = recordsForCurrentPage;
 
                 TempData["ExportSuccess"] = "Data loaded successfully.";
 
                 return View("~/Views/Home/Export.cshtml");
+                //===================================================
+                // Pager - End
+                //===================================================
             }
             catch (Exception ex)
             {

@@ -254,6 +254,8 @@ namespace Curriculum_Info_Application.Controllers
                 ViewBag.ColumnsList2 = new SelectList(new List<string>());
                 ViewBag.TableHeaders = new Dictionary<string, string>();
                 ViewBag.TableRecord = new Dictionary<string, List<string>>();
+                ViewBag.CurrentPage = 0;
+                ViewBag.TotalPages = 0;
 
                 return RedirectToAction("Index","Export");
             }

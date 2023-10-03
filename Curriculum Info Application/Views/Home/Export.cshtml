@@ -1,6 +1,8 @@
 ﻿@{
-    Dictionary<string, string> tableHeaders = ViewBag.TableHeaders;
-    Dictionary<string, List<string>> tableRecords = ViewBag.TableRecord;
+    Dictionary<string, string> tableHeaders = ViewBag.TableHeaders ?? new Dictionary<string, string>();
+    List<KeyValuePair<string, List<string>>> tableRecords = ViewBag.TableRecord ?? new List<KeyValuePair<string, List<string>>>();
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
 }
 
 @if (TempData["ExportSuccess"] != null)
@@ -39,6 +41,29 @@
     </div>
 
     <div class="list-content">
+        <div class="pagination">
+            <ul class="pagination">
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Export", new { page = 1 })">First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Export", new { page = currentPage - 1 })">Previous</a>
+                    </li>
+                }
+                <h4>   Page @currentPage of @totalPages   </h4>
+                @if (currentPage < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Export", new { page = currentPage + 1 })">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Export", new { page = totalPages })">Last</a>
+                    </li>
+                }
+            </ul>
+        </div>
         <button id="exportButton" class="btn btn-success">Export to Excel</button>
         <table class="table" id="exportTable">
             <thead>
