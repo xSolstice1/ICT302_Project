@@ -41,7 +41,7 @@ namespace Curriculum_Info_Application.Controllers
                 // Pager - Start
                 //===================================================
                 // Initialize pagination parameters
-                const int PageSize = 80; // Number of records per page
+                const int PageSize = 30; // Number of records per page
                 int currentPage = page ?? 1; // Default to the first page
 
                 // Calculate the number of records to skip based on the current page
