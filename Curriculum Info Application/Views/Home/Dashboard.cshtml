@@ -1,0 +1,94 @@
+﻿<div class="container mt-5">
+    <div class="row">
+        <!-- Import Duration Matrix -->
+        <div class="col-md-4">
+            <div class="chart-container">
+                <h3>Import Duration Matrix</h3>
+                <div id="import-duration-chart"></div>
+            </div>
+        </div>
+
+        <!-- Import Rate by File Type Pie Chart -->
+        <div class="col-md-4">
+            <div class="chart-container">
+                <h3>Import Rate by File Type</h3>
+                <div id="import-rate-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <!-- Transaction History -->
+    <div class="col-md-6">
+        <h3>Transaction History</h3>
+        <table class="table table-striped" style="width:100% !important;">
+            <thead>
+                <tr>
+                    <th>Date/ Time</th>
+                    <th>User</th>
+                    <th>Import Start Time</th>
+                    <th>Import End Time</th>
+                    <th>Import Duration</th>
+                    <th>Filename 1</th>
+                    <th>File size 1</th>
+                    <th>Join Key 1</th>
+                    <th>Filename 2</th>
+                    <th>File size 2</th>
+                    <th>Join Key 2</th>
+                    <th>Merged File size</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15/10/2023 09:00:10:251</td>
+                    <td>User 1</td>
+                    <td>15/10/2023 09:00:10:251</td>
+                    <td>15/10/2023 09:01:10:251</td>
+                    <td>1 min</td>
+                    <td>test1.csv</td>
+                    <td>15,000 kb</td>
+                    <td>code</td>
+                    <td>test2.xlsx</td>
+                    <td>20,500 kb</td>
+                    <td>Code</td>
+                    <td>18,962 kb</td>
+                </tr>
+                <tr>
+                    <td>15/10/2023 09:08:10:251</td>
+                    <td>User 2</td>
+                    <td>15/10/2023 09:08:10:251</td>
+                    <td>15/10/2023 09:09:50:251</td>
+                    <td>1 min</td>
+                    <td>test1.csv</td>
+                    <td>15,000 kb</td>
+                    <td>code</td>
+                    <td>test2.xlsx</td>
+                    <td>20,500 kb</td>
+                    <td>Code</td>
+                    <td>18,962 kb</td>
+                </tr>
+                <!-- Add more rows for transaction history -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Script for generating dummy charts -->
+<script>
+    // Dummy import duration matrix chart
+    const importDurationChart = document.getElementById('import-duration-chart');
+    Plotly.newPlot(importDurationChart, [{
+        x: [1, 2, 3, 4],
+        y: [10, 15, 13, 17],
+        type: 'bar'
+    }]);
+
+    // Dummy import rate by file type pie chart
+    const importRateChart = document.getElementById('import-rate-chart');
+    Plotly.newPlot(importRateChart, [{
+        labels: ['CSV', 'Excel'],
+        values: [41, 59],
+        type: 'pie'
+    }]);
+</script>

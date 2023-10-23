@@ -17,18 +17,30 @@ using Microsoft.Net.Http.Headers;
 using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
 using System.Drawing.Drawing2D;
+using System.Data.OleDb;
 
 namespace Curriculum_Info_Application.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IConfiguration _configuration;
+        private readonly string _connection;
+        private OleDbConnection _conn;
         private ImportModel model = new ImportModel();
         private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' };
         private char validChar = '_';
 
+        public HomeController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            _connection = _configuration.GetConnectionString("DefaultConnection");
+            _conn = new OleDbConnection(_connection);
+        }
+
         public IActionResult Index()
         {
             TempData["SuccessMessage"] = null;
+            TempData["CurrentPage"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             DeleteIfFileExists("Data1.xml");
@@ -92,8 +104,8 @@ namespace Curriculum_Info_Application.Controllers
                     ViewBag.TableRecord = new Dictionary<string, List<string>>();
                     return RedirectToAction("Index", "Export");
                 }
-
-                return View("Index");
+                TempData["CurrentPage"] = "Merge";
+                return View("Merge");
 
                 //return Ok("Data imported and saved successfully.");
                 //return View();
@@ -256,7 +268,7 @@ namespace Curriculum_Info_Application.Controllers
                 ViewBag.TableRecord = new Dictionary<string, List<string>>();
                 ViewBag.CurrentPage = 0;
                 ViewBag.TotalPages = 0;
-
+                TempData["CurrentPage"] = "Export";
                 return RedirectToAction("Index","Export");
             }
             catch (Exception ex)
@@ -317,6 +329,18 @@ namespace Curriculum_Info_Application.Controllers
             ViewBag.TableHeaders = new Dictionary<string, string>();
             ViewBag.TableRecord = new Dictionary<string, List<string>>();
             return RedirectToAction("Index", "Export");
+        }
+        public IActionResult Login()
+        {
+            return View();
+        } 
+        public IActionResult Signup()
+        {
+            return View();
+        }
+        public IActionResult Dashboard()
+        {
+            return View();
         }
 
     }

@@ -14,33 +14,11 @@
         <form asp-controller="Home" asp-action="ProcessImport" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="fileInput" class="form-label">Select files to upload (up to 2 files):</label>
-                <input type="file" class="form-control" id="fileInput" name="files" multiple accept=".csv, .xls, .xlsx" required/>
+                <input type="file" class="form-control" id="fileInput" name="files" multiple accept=".csv, .xls, .xlsx" required />
             </div>
 
             <button type="submit" class="btn btn-primary">Upload Files</button>
         </form>
-
-        <br /> <br /><br />
-
-        <h2 class="mb-4">Merge Data</h2>
-
-        <div class="mb-3">
-            <label for="joinKey" class="form-label">Select a join key:</label>
-            @using (Html.BeginForm("JoinTables", "Home", FormMethod.Post, new { id = "mergeForm" }))
-            {
-                <div class="form-group">
-                    <label for="selectedColumn1">Select a column from File 1:</label>
-                    @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
-                </div>
-
-                <div class="form-group">
-                    <label for="selectedColumn2">Select a column from File 2:</label>
-                    @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
-                </div>
-                <br />
-                <button type="button" class="btn btn-primary" onclick="validateAndMerge()">Merge Files</button>
-            }
-        </div>
     </div>
 </div>
 
@@ -53,18 +31,4 @@
             return false;
         }
     });
-
-    function validateAndMerge() {
-        var selectedColumn1 = document.getElementById("selectedColumn1").value;
-        var selectedColumn2 = document.getElementById("selectedColumn2").value;
-
-        if (!selectedColumn1 || !selectedColumn2) {
-            alert("Please select both columns.");
-            return;
-        }
-        else{
-            // Proceed to merge action if both columns are selected
-            document.getElementById("mergeForm").submit();
-        }        
-    }
 </script>

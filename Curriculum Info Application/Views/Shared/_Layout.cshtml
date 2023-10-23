@@ -6,9 +6,14 @@
     <title>@ViewData["Title"] Curriculum Info Application</title>
     <link rel="icon" href="~/images/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/self.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Curriculum_Info_Application.styles.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,20 +30,43 @@
                     <ul class="navbar-nav flex-grow-1">
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login" style="color: white;">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Signup" style="color: white;">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard" style="color: white;">Dashboard</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">Import</a>
                         </li>
-                        <!--
+                        @*<li class="nav-item">
+                            <h2> >> </h2>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">Merge</a>
+                        </li>
+                        <li class="nav-item">
+                            <h2> >> </h2>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Export" style="color: white;">Export</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white;"> >> </span>
                         </li>
-                        
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">Login</a>
-                            </li>
-                        -->
-                        
+                        <li class="nav-item">
+                            <div class="nav-link @(TempData["CurrentPage"]?.ToString() == "Merge" ? "active" : "")">Merge</div>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white;"> >> </span>
+                        </li>
+                        <li class="nav-item">
+                            <div class="nav-link @(TempData["CurrentPage"]?.ToString() == "Export" ? "active" : "")">Export</div>
+                        </li>
+
                     </ul>
                 </div>
             </div>

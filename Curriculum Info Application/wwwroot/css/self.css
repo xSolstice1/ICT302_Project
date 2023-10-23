@@ -1,132 +1,153 @@
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f9fa; /* Set a light background color */
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+background-color: #f8f9fa; /* Set a light background color */
 }
 
 .content {
-  flex: 1;
-  padding-top: 50px;
+flex: 1;
+padding-top: 50px;
 }
 
 .login-card {
-  background-color: #ffffff; /* Set a white background color for the card */
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+background-color: #ffffff; /* Set a white background color for the card */
+border-radius: 15px;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
 .navbar-nav li.nav-item {
-  padding: 0 80px; /* Adjust the padding as needed */
+padding: 0 80px; /* Adjust the padding as needed */
 }
 
 .navbar-nav li.nav-item a {
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #333; /* Default text color */
+padding: 10px 15px;
+text-decoration: none;
+color: #333; /* Default text color */
 }
 
 .navbar-nav li.nav-item a:hover {
-  color: red !important; /* Text color on hover */
-  background-image: linear-gradient(to right, yellow, yellow); /* Yellow underline on hover */
-  background-position: 0 90%;
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
+color: red !important; /* Text color on hover */
+background-image: linear-gradient(to right, yellow, yellow); /* Yellow underline on hover */
+background-position: 0 90%;
+background-repeat: no-repeat;
+background-size: 100% 0.2em;
+}
+
+.navbar-nav li.nav-item .nav-link.active {
+color: red !important; /* Change text color for active Merge and Export */
+background-image: linear-gradient(to right, yellow, yellow); /* Yellow underline on hover */
+background-position: 0 90%;
+background-repeat: no-repeat;
+background-size: 100% 0.2em;
 }
 
 .import-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+background-color: #ffffff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .export-container {
-  display: flex;
-  padding-top: 20px;
+display: flex;
+padding-top: 20px;
 }
 
 .search-gadget {
-  flex: 0 0 auto; /* Don't grow, don't shrink, initial size based on content */
-  padding-right: 10px; /* Optional: Adjust padding */
+flex: 0 0 auto; /* Don't grow, don't shrink, initial size based on content */
+padding-right: 10px; /* Optional: Adjust padding */
 }
 
 .list-content {
-  flex: 1 1 auto; /* Grow and shrink as needed, initial size based on content */
-  padding: 10px; /* Adjust padding */
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  max-height:80vh !important; 
-  max-width: 100vw !important; 
-  overflow: auto;
+flex: 1 1 auto; /* Grow and shrink as needed, initial size based on content */
+padding: 10px; /* Adjust padding */
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+position: relative;
+max-height: 80vh !important;
+max-width: 100vw !important;
+overflow: auto;
 }
 
 .list-content table {
-  table-layout: auto; /* Adjust table layout if needed */
+table-layout: auto; /* Adjust table layout if needed */
 }
 
 .list-content th, .list-content td {
-  text-align: left;
-  padding: 10px;
-  white-space: nowrap; /* Prevent text wrapping */
+text-align: left;
+padding: 10px;
+white-space: nowrap; /* Prevent text wrapping */
 }
 
 .search-gadget h4 {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
+
 .search-gadget label {
-  display: block;
-  margin-bottom: 5px;
+display: block;
+margin-bottom: 5px;
 }
+
 .search-button {
-  position: absolute;
-  bottom: 10px;
-  left: 10px; /* Adjust left position */
+position: absolute;
+bottom: 10px;
+left: 10px; /* Adjust left position */
 }
 
 .export-button {
-    position: absolute;
-    bottom: 10px;
-    left: 10px; /* Adjust right position */
+position: absolute;
+bottom: 10px;
+left: 10px; /* Adjust right position */
 }
+
 .bottom-buttons {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 10px;
-  width: calc(100% - 20px); /* Adjust width to prevent overlapping */
-  padding: 0 10px;
+display: flex;
+justify-content: space-between;
+position: absolute;
+bottom: 10px;
+width: calc(100% - 20px); /* Adjust width to prevent overlapping */
+padding: 0 10px;
 }
 
 .pagination {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+transition: background-color .3s;
+border: 1px solid #ddd;
+margin: 0 4px;
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
+background-color: #4CAF50;
+color: white;
+border: 1px solid #4CAF50;
 }
 
 .pagination a:hover:not(.active) {
-    background-color: #ddd;
+background-color: #ddd;
 }
 
-.pagination li{
-    margin-left: 10px;
-    margin-right: 5px;
+.pagination li {
+margin-left: 10px;
+margin-right: 5px;
+}
+
+.signup-container {
+max-width: 400px;
+margin: 0 auto;
+padding: 20px;
+margin-top: 100px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
 }
