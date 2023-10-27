@@ -5,57 +5,56 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Curriculum_Info_Application
 build_property.RootNamespace = Curriculum_Info_Application
-build_property.ProjectDir = C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\
+build_property.ProjectDir = C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application
+build_property.MSBuildProjectDirectory = C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Dashboard.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Export.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Export.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeHBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Index.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Login.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Merge.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Merge.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZXJnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Home/Signup.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Home/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Shared/Error.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/_ViewImports.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/_ViewStart.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/cckkt/Desktop/ICT302/Application/ICT302_Project/Curriculum Info Application/Views/Shared/_Layout.cshtml]
+[C:/Users/xsols/OneDrive/Documents/ICT302Project/Curriculum Info Application/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-38sek4t0xc

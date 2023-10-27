@@ -27,7 +27,7 @@ namespace Curriculum_Info_Application.Controllers
         private readonly string _connection;
         private OleDbConnection _conn;
         private ImportModel model = new ImportModel();
-        private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' };
+        private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' ,'>','<','&','\'','"'};
         private char validChar = '_';
 
         public HomeController(IConfiguration configuration)
