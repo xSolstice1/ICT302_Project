@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <div class="card login-card">
                 <div class="card-header">
-                    <h2 class="mb-4">Login</h2>
+                    <h2 class="text-center mb-4">Login</h2>
                 </div>
                 <div class="card-body">
                     <form asp-controller="Login" asp-action="Login" method="post">
@@ -24,39 +24,63 @@
                     </form>
                 </div>
             </div>
-            
             <div class="text-center">
                 <p>Still don't have an account? <a href="javascript:void(0);" id="toggle-signup">Click here to sign up</a></p>
             </div>
-
-
         </div>
     </div>
 </div>
 
 <div class="container signup-container" style="display: none;">
-    <h2 class="text-center mb-4">Sign Up</h2>
-    <form>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-        </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card login-card">
+                <div class="card-header">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Login" asp-action="Signup" method="post">
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
 
-        <div class="form-group">
-            <label for="signup-username">Username</label>
-            <input type="text" class="form-control" id="signup-username" placeholder="Enter your username">
-        </div>
+                        <div class="mb-3">
+                            <label for="signup-username">Username</label>
+                            <input type="text" class="form-control" id="signup-username" placeholder="Enter your username" required>
+                        </div>
 
-        <div class="form-group">
-            <label for="signup-password">Password</label>
-            <input type="password" class="form-control" id="signup-password" placeholder="Enter your password">
+                        <div class="mb-3">
+                            <label for="signup-password">Password</label>
+                            <input type="password" class="form-control" id="signup-password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Already have an account? <a href="javascript:void(0);" id="toggle-login">Click here to login</a></p>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
-    </form>
+    </div>
 </div>
 
+
 <script>
-    document.getElementById('toggle-signup').addEventListener('click', function() {
+    document.getElementById('toggle-signup').addEventListener('click', function () {
+        var loginForm = document.querySelector('.content');
+        var signupForm = document.querySelector('.signup-container');
+
+        if (loginForm.style.display !== 'none') {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        } else {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        }
+    });
+
+    document.getElementById('toggle-login').addEventListener('click', function () {
         var loginForm = document.querySelector('.content');
         var signupForm = document.querySelector('.signup-container');
 
@@ -69,3 +93,4 @@
         }
     });
 </script>
+
