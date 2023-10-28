@@ -247,6 +247,12 @@ namespace Curriculum_Info_Application.Controllers
                 XDocument data1Xml = XDocument.Load("Data1.xml");
                 XDocument data2Xml = XDocument.Load("Data2.xml");
 
+                foreach (var invalidChar in invalidChars)
+                {
+                    selectedColumn1 = selectedColumn1.Replace(invalidChar, validChar);
+                    selectedColumn2 = selectedColumn2.Replace(invalidChar, validChar);
+                }
+
                 // Join the XML data based on the specified columns
                 var joinedData = from record1 in data1Xml.Descendants("Record")
                                  join record2 in data2Xml.Descendants("Record")
