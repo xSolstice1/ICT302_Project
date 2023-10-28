@@ -113,7 +113,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -602,6 +602,24 @@
           }
         }
       },
+      "ServiceStack.Text/6.11.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0",
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net6.0/ServiceStack.Text.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ServiceStack.Text.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -778,7 +796,7 @@
           }
         }
       },
-      "System.Memory/4.5.4": {
+      "System.Memory/4.5.5": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -1271,10 +1289,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1287,6 +1305,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -1296,7 +1315,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2010,6 +2029,23 @@
         "version.txt"
       ]
     },
+    "ServiceStack.Text/6.11.0": {
+      "sha512": "LGPW32nrQ1uJEgErMlUSEe2R+qnSMDNKXkRnN1RPgVHMbiIejCzOziSDW3MlokN/wFqiKhjgCUWi99q6yGlkkg==",
+      "type": "package",
+      "path": "servicestack.text/6.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/ServiceStack.Text.dll",
+        "lib/net472/ServiceStack.Text.xml",
+        "lib/net6.0/ServiceStack.Text.dll",
+        "lib/net6.0/ServiceStack.Text.xml",
+        "lib/netstandard2.0/ServiceStack.Text.dll",
+        "lib/netstandard2.0/ServiceStack.Text.xml",
+        "servicestack.text.6.11.0.nupkg.sha512",
+        "servicestack.text.nuspec"
+      ]
+    },
     "System.Configuration.ConfigurationManager/7.0.0": {
       "sha512": "WvRUdlL1lB0dTRZSs5XcQOd5q9MYNk90GkbmRmiCvRHThWiojkpGqWdmEDJdXyHbxG/BhE5hmVbMfRLXW9FJVA==",
       "type": "package",
@@ -2291,10 +2327,10 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
       "type": "package",
-      "path": "system.memory/4.5.4",
+      "path": "system.memory/4.5.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2308,7 +2344,7 @@
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
+        "system.memory.4.5.5.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3071,29 +3107,25 @@
       "EPPlus >= 6.2.9",
       "Microsoft.Data.SqlClient >= 5.1.1",
       "Newtonsoft.Json >= 13.0.3",
+      "ServiceStack.Text >= 6.11.0",
       "System.Data.OleDb >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xsols\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\cckkt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
+      "projectUniqueName": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
       "projectName": "Curriculum Info Application",
-      "projectPath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
-      "packagesPath": "C:\\Users\\xsols\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xsols\\OneDrive\\Documents\\ICT302Project\\Curriculum Info Application\\obj\\",
+      "projectPath": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\Curriculum Info Application.csproj",
+      "packagesPath": "C:\\Users\\cckkt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cckkt\\Desktop\\ICT302\\Application\\ICT302_Project\\Curriculum Info Application\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\xsols\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\cckkt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3101,6 +3133,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3135,6 +3168,10 @@
             "target": "Package",
             "version": "[13.0.3, )"
           },
+          "ServiceStack.Text": {
+            "target": "Package",
+            "version": "[6.11.0, )"
+          },
           "System.Data.OleDb": {
             "target": "Package",
             "version": "[7.0.0, )"
@@ -3163,7 +3200,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

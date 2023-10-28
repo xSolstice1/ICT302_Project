@@ -18,6 +18,8 @@ using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
 using System.Drawing.Drawing2D;
 using System.Data.OleDb;
+using ServiceStack.Text;
+using CsvReader = CsvHelper.CsvReader;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -37,7 +39,7 @@ namespace Curriculum_Info_Application.Controllers
             _conn = new OleDbConnection(_connection);
         }
 
-        public IActionResult Index()
+        public IActionResult Import()
         {
             TempData["SuccessMessage"] = null;
             TempData["CurrentPage"] = null;
@@ -46,6 +48,12 @@ namespace Curriculum_Info_Application.Controllers
             DeleteIfFileExists("Data1.xml");
             DeleteIfFileExists("Data2.xml");
             DeleteIfFileExists("JoinedData.xml");
+            LoginModel loginModel = new LoginModel();
+            if(!loginModel.isLogin)
+            {
+                TempData["LoginWarningMessage"] = "Please Login";
+                return View("Index");
+            }
             return View();
         }
 
@@ -402,17 +410,13 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
-        public IActionResult Import()
-        {
-            return View();
-        }
         public IActionResult Export()
         {
             ViewBag.TableHeaders = new Dictionary<string, string>();
             ViewBag.TableRecord = new Dictionary<string, List<string>>();
             return RedirectToAction("Index", "Export");
         }
-        public IActionResult Login()
+        public IActionResult Index()
         {
             return View();
         } 
@@ -422,6 +426,12 @@ namespace Curriculum_Info_Application.Controllers
         }
         public IActionResult Dashboard()
         {
+            LoginModel loginModel = new LoginModel();
+            if (!loginModel.isLogin)
+            {
+                TempData["LoginWarningMessage"] = "Please Login";
+                return View("Index");
+            }
             return View();
         }
 
