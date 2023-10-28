@@ -253,6 +253,8 @@ namespace Curriculum_Info_Application.Controllers
                 // Load the XML data from the two XML files
                 XDocument data1Xml = XDocument.Load("Data1.xml");
                 XDocument data2Xml = XDocument.Load("Data2.xml");
+                IEnumerable<XElement> joinedData = null;
+                string joinType = "antijoin"; //add in parameter in the future [TODO]
 
                 foreach (var invalidChar in invalidChars)
                 {
@@ -264,13 +266,67 @@ namespace Curriculum_Info_Application.Controllers
                     }
                 }
 
-                // Join the XML data based on the specified columns
-                var joinedData = from record1 in data1Xml.Descendants("Record")
-                                join record2 in data2Xml.Descendants("Record")
-                                on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
-                                select new XElement("Record",
-                                    record1.Elements(),
-                                    record2.Elements());              
+                // Join the XML data based on the specified columns // jointype selected
+                if (joinType.ToLower().Equals("innerjoin")) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                    join record2 in data2Xml.Descendants("Record")
+                                    on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
+                                    select new XElement("Record",
+                                        record1.Elements(),
+                                        record2.Elements());
+                } else if (joinType.ToLower().Equals("leftjoin")) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                    join record2 in data2Xml.Descendants("Record")
+                                    on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2) into leftJoin
+                                    from record2 in leftJoin.DefaultIfEmpty()
+                                    select new XElement("Record",
+                                        record1.Elements(),
+                                        record2 != null ? record2.Elements() : null);
+                } else if (joinType.ToLower().Equals("rightjoin")) {
+                    joinedData = from record2 in data2Xml.Descendants("Record")
+                                    join record1 in data1Xml.Descendants("Record")
+                                    on (string)record2.Element(selectedColumn2) equals (string)record1.Element(selectedColumn1) into rightJoin
+                                    from record1 in rightJoin.DefaultIfEmpty()
+                                    select new XElement("Record",
+                                        record1 != null ? record1.Elements() : null,
+                                        record2.Elements());
+                } else if (joinType.ToLower().Equals("fulljoin")) {
+                    var leftJoinResult = from record1 in data1Xml.Descendants("Record")
+                                        join record2 in data2Xml.Descendants("Record")
+                                        on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2) into leftJoin
+                                        from record2 in leftJoin.DefaultIfEmpty()
+                                        select new
+                                        {
+                                            Record1 = record1,
+                                            Record2 = record2
+                                        };
+
+                    var rightJoinResult = from record2 in data2Xml.Descendants("Record")
+                                        join record1 in data1Xml.Descendants("Record")
+                                        on (string)record2.Element(selectedColumn2) equals (string)record1.Element(selectedColumn1) into rightJoin
+                                        from record1 in rightJoin.DefaultIfEmpty()
+                                        select new
+                                        {
+                                            Record1 = record1,
+                                            Record2 = record2
+                                        };
+
+                    var fullJoinResult = leftJoinResult.Union(rightJoinResult);
+
+                    joinedData = from result in fullJoinResult
+                                    select new XElement("Record",
+                                        result.Record1 != null ? result.Record1.Elements() : null,
+                                        result.Record2 != null ? result.Record2.Elements() : null);
+
+                } else if (joinType.ToLower().Equals("antijoin")) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                        join record2 in data2Xml.Descendants("Record")
+                                        on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2) into leftJoin
+                                        where leftJoin.All(r => r == null)
+                                        select record1;
+                } else {
+                    //idk what else, maybe throw error if jointype not equals to any stated above(?)
+                }
 
                 // Process the XML to add numerical suffixes to duplicate element names
                 var processedXml = ProcessXml(joinedData);
