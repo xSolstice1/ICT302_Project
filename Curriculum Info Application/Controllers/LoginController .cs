@@ -1,4 +1,6 @@
 ﻿using System.Data.OleDb;
+using System.Text.Json;
+using System.Xml.Linq;
 using Curriculum_Info_Application.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,15 +31,28 @@ namespace Curriculum_Info_Application.Controllers
         {
             if (LoginModel.checkCredential(_connection, model))
             {
-                LoginModel loginModel = new LoginModel();
-                loginModel.isLogin = true;
                 TempData["LoginWarningMessage"] = null;
+                var data = new LoginModel
+                {
+                    Email = model.Email,
+                    Username = LoginModel.getUsernameByEmail(_connection, model)
+                };
+
+                string filePath = "login.json";
+
+                // Use a StreamWriter to write to the JSON file
+                using (StreamWriter streamWriter = new StreamWriter(filePath))
+                {
+                    string json = JsonSerializer.Serialize(data);
+                    streamWriter.Write(json);
+                }
+
                 return View("~/Views/Home/Import.cshtml");
             }
             else
             {
                 TempData["LoginErrorMessage"] = "Invalid username or password.";
-                return View("~/Views/Home/Login.cshtml");
+                return View("~/Views/Home/Index.cshtml");
             }
         }
 
@@ -47,12 +62,12 @@ namespace Curriculum_Info_Application.Controllers
             if (LoginModel.insertNewUser(_connection, model))
             {
                 TempData["LoginSuccessMessage"] = "Account created.";
-                return View("~/Views/Home/Login.cshtml");
+                return View("~/Views/Home/Index.cshtml");
             }
             else
             {
                 TempData["LoginErrorMessage"] = "Registration failed. Please try again.";
-                return View("~/Views/Home/Login.cshtml");
+                return View("~/Views/Home/Index.cshtml");
             }
         }
     }

@@ -75,5 +75,37 @@ namespace Curriculum_Info_Application.Models
                 conn.Close();
             }
         }
+
+        public static string getUsernameByEmail(string connection, LoginModel info)
+        {
+            OleDbConnection conn = new OleDbConnection(connection);
+
+            try
+            {
+                conn.Open();
+
+                OleDbCommand cmd_Query = new OleDbCommand("Select USER_NAME from DCUSER where USER_EMAIL = '" + info.Email + "';", conn);
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd_Query);
+                DataTable dt = new DataTable();
+                int result = adapter.Fill(dt);
+
+                // check if record exist in database
+                if (result > 0)
+                {
+                    return dt.Rows[0]["USER_NAME"].ToString();
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
