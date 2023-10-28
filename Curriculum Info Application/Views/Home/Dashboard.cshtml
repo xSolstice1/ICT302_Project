@@ -1,4 +1,6 @@
-﻿<div class="container mt-5">
+﻿@model List<Transaction>
+
+<div class="container mt-5">
     <div class="row">
         <!-- Import Duration Matrix -->
         <div class="col-md-4">
@@ -19,56 +21,44 @@
 </div>
 <div class="container mt-5">
     <!-- Transaction History -->
-    <div class="col-md-6">
+    <div class="col-md-12">
         <h3>Transaction History</h3>
         <table class="table table-striped" style="width:100% !important;">
             <thead>
                 <tr>
-                    <th>Date/ Time</th>
+                    <th>Date/Time</th>
                     <th>User</th>
                     <th>Import Start Time</th>
                     <th>Import End Time</th>
                     <th>Import Duration</th>
                     <th>Filename 1</th>
-                    <th>File size 1</th>
-                    <th>Join Key 1</th>
+                    <th>File Size 1</th>
                     <th>Filename 2</th>
-                    <th>File size 2</th>
+                    <th>File Size 2</th>
+                    <th>Merged File Size</th>
+                    <th>Join Key 1</th>
                     <th>Join Key 2</th>
-                    <th>Merged File size</th>
-
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>15/10/2023 09:00:10:251</td>
-                    <td>User 1</td>
-                    <td>15/10/2023 09:00:10:251</td>
-                    <td>15/10/2023 09:01:10:251</td>
-                    <td>1 min</td>
-                    <td>test1.csv</td>
-                    <td>15,000 kb</td>
-                    <td>code</td>
-                    <td>test2.xlsx</td>
-                    <td>20,500 kb</td>
-                    <td>Code</td>
-                    <td>18,962 kb</td>
-                </tr>
-                <tr>
-                    <td>15/10/2023 09:08:10:251</td>
-                    <td>User 2</td>
-                    <td>15/10/2023 09:08:10:251</td>
-                    <td>15/10/2023 09:09:50:251</td>
-                    <td>1 min</td>
-                    <td>test1.csv</td>
-                    <td>15,000 kb</td>
-                    <td>code</td>
-                    <td>test2.xlsx</td>
-                    <td>20,500 kb</td>
-                    <td>Code</td>
-                    <td>18,962 kb</td>
-                </tr>
-                <!-- Add more rows for transaction history -->
+                @foreach (var transaction in Model)
+                {
+                    <tr>
+                        <td>@transaction.transaction_datetime</td>
+                        <td>@transaction.user</td>
+                        <td>@transaction.import_starttime</td>
+                        <td>@transaction.import_endtime</td>
+                        <td>@transaction.import_duration</td>
+                        <td>@transaction.filename1</td>
+                        <td>@transaction.filesize1</td>
+                        <td>@transaction.filename2</td>
+                        <td>@transaction.filesize2</td>
+                        <td>@transaction.merged_filesize</td>
+                        <td>@transaction.joinkey1</td>
+                        <td>@transaction.joinkey2</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

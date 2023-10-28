@@ -9,36 +9,72 @@
 
 <div class="container content">
     <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
+        <div class="col-md-10">
             <div class="card login-card">
                 <div class="card-header">
                     <h2 class="text-center mb-4">Merge Data</h2>
                 </div>
                 <div class="card-body">
-                    <label for="joinKey" class="form-label">Select a join key 1:</label>
                     @using (Html.BeginForm("JoinTables", "Home", FormMethod.Post, new { id = "mergeForm" }))
                     {
-                        <div class="form-group">
-                            <label for="selectedColumn1">Select a column from File 1:</label>
-                            @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="joinKey" class="form-label" style="font-weight: bold;">Select a join key 1:</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selectedColumn1">Select a column from File 1:</label>
+                                    @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selectedColumn2">Select a column from File 2:</label>
+                                    @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="joinKey" class="form-label" style="font-weight: bold;">Select a join key 2 (Optional):</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selectedColumn3">Select a column from File 2:</label>
+                                    @Html.DropDownList("selectedColumn3", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selectedColumn4">Select a column from File 2:</label>
+                                    @Html.DropDownList("selectedColumn4", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-group text-center">
+                            <b>Select a join type:</b><br />
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="joinType" id="innerJoin" value="innerjoin">
+                                <label class="form-check-label" for="innerJoin">Inner Join</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="joinType" id="leftJoin" value="leftjoin">
+                                <label class="form-check-label" for="leftJoin">Left Join</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="joinType" id="rightJoin" value="rightjoin">
+                                <label class="form-check-label" for="rightJoin">Right Join</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="joinType" id="fullJoin" value="fulljoin">
+                                <label class="form-check-label" for="fullJoin">Full Join</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="joinType" id="antiJoin" value="antijoin">
+                                <label class="form-check-label" for="antiJoin">Anti Join</label>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="selectedColumn2">Select a column from File 2:</label>
-                            @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
-                        </div>
-                        <br />
-                        <label class="form-label">Select a join key 2 (Optional):</label>
-                        <div class="form-group">
-                            <label for="selectedColumn3">Select a column from File 2:</label>
-                            @Html.DropDownList("selectedColumn3", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
-                        </div>
-
-                        <div class="form-group">
-                            <label for="selectedColumn4">Select a column from File 2:</label>
-                            @Html.DropDownList("selectedColumn4", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
-                        </div>
-                        <br />
                         <button type="button" class="btn btn-primary" onclick="validateAndMerge()">Merge Files</button>
                     }
                 </div>
@@ -53,9 +89,24 @@
         var selectedColumn2 = document.getElementById("selectedColumn2").value;
         var selectedColumn3 = document.getElementById("selectedColumn3").value;
         var selectedColumn4 = document.getElementById("selectedColumn4").value;
+        var radioButtons = document.getElementsByName("joinType");
 
-        if (!selectedColumn1 || !selectedColumn2) {
-            alert("Please select both columns.");
+        var joinType = "";
+
+        // Loop through the radio buttons
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                joinType = radioButtons[i].value;
+                break; // Exit the loop when a checked radio button is found
+            }
+        }
+
+        if (!selectedColumn1 || !selectedColumn2 || !joinType) {
+            alert("Please select at least join key 1 and join type.");
+            return;
+        }
+        else if ((!selectedColumn3 && selectedColumn4) || (selectedColumn3 && !selectedColumn4)) {
+            alert("Please complete join key 2.");
             return;
         }
         else {

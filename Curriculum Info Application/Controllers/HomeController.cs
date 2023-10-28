@@ -259,7 +259,7 @@ namespace Curriculum_Info_Application.Controllers
         }
 
         [HttpPost]
-        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2, string selectedColumn3, string selectedColumn4)
+        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2, string selectedColumn3, string selectedColumn4, string joinType)
         {
             try
             {
@@ -267,7 +267,6 @@ namespace Curriculum_Info_Application.Controllers
                 XDocument data1Xml = XDocument.Load("Data1.xml");
                 XDocument data2Xml = XDocument.Load("Data2.xml");
                 IEnumerable<XElement> joinedData = null;
-                string joinType = "antijoin"; //add in parameter in the future [TODO]
 
                 foreach (var invalidChar in invalidChars)
                 {
@@ -484,13 +483,16 @@ namespace Curriculum_Info_Application.Controllers
             return View();
         }
         public IActionResult Dashboard()
-        {LoginModel loginModel = new LoginModel();
+        {
+            LoginModel loginModel = new LoginModel();
             if(!System.IO.File.Exists("login.json"))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");
             }
-            return View();
+
+            List<Transaction> transactions = new List<Transaction>();
+            return RedirectToAction("Index", "Transaction");
         }
 
     }
