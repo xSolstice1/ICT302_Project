@@ -48,8 +48,7 @@ namespace Curriculum_Info_Application.Controllers
             DeleteIfFileExists("Data1.xml");
             DeleteIfFileExists("Data2.xml");
             DeleteIfFileExists("JoinedData.xml");
-            LoginModel loginModel = new LoginModel();
-            if(!loginModel.isLogin)
+            if (!System.IO.File.Exists("login.json"))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");
@@ -419,15 +418,19 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Index()
         {
             return View();
-        } 
+        }
+        public IActionResult Logout()
+        {
+            System.IO.File.Delete("login.json");
+            return View("Index");
+        }
         public IActionResult Signup()
         {
             return View();
         }
         public IActionResult Dashboard()
-        {
-            LoginModel loginModel = new LoginModel();
-            if (!loginModel.isLogin)
+        {LoginModel loginModel = new LoginModel();
+            if(!System.IO.File.Exists("login.json"))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");
