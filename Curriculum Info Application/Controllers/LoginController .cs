@@ -23,6 +23,7 @@ namespace Curriculum_Info_Application.Controllers
             TempData["LoginErrorMessage"] = null;
             TempData["LoginSuccessMessage"] = null;
             TempData["LoginWarningMessage"] = null;
+            TempData["LoginInfoMessage"] = null;
             return View();
         }
 
@@ -46,6 +47,8 @@ namespace Curriculum_Info_Application.Controllers
                     string json = JsonSerializer.Serialize(data);
                     streamWriter.Write(json);
                 }
+
+                TempData["LoginInfoMessage"] = "Welcome " + data.Username;
 
                 return View("~/Views/Home/Import.cshtml");
             }

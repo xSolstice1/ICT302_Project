@@ -61,6 +61,7 @@ namespace Curriculum_Info_Application.Controllers
         {
             try
             {
+                TempData["LoginInfoMessage"] = null;
                 List<List<string>> records = new List<List<string>>();
 
                 for (int i = 0; i < files.Count; i++)
