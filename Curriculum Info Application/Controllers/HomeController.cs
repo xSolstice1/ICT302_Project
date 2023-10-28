@@ -20,6 +20,7 @@ using System.Drawing.Drawing2D;
 using System.Data.OleDb;
 using ServiceStack.Text;
 using CsvReader = CsvHelper.CsvReader;
+using ServiceStack;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -53,6 +54,23 @@ namespace Curriculum_Info_Application.Controllers
             {
                 TempData["LoginInfoMessage"] = null;
                 List<List<string>> records = new List<List<string>>();
+                LoginModel loginModel = new LoginModel();
+                Transaction.DeleteOldTransactions();
+                Transaction newTransaction = new Transaction();
+                DateTime start = DateTime.Now;
+                newTransaction.transaction_datetime = start;
+                newTransaction.user = loginModel.GetCurrentUsername();
+                newTransaction.import_starttime = start;
+                newTransaction.file_qty = files.Count;
+                newTransaction.filename1 = files[0].FileName;
+                newTransaction.filesize1 = Math.Round((files[0].Length / 1024.0), 1);
+                newTransaction.filetype1 = Path.GetExtension(files[0].FileName).ToLower();
+                if(files.Count > 1)
+                {
+                    newTransaction.filename2 = files[1].FileName;
+                    newTransaction.filesize2 = Math.Round((files[1].Length / 1024.0), 1);
+                    newTransaction.filetype2 = Path.GetExtension(files[1].FileName).ToLower();
+                }
 
                 for (int i = 0; i < files.Count; i++)
                 {
@@ -86,6 +104,10 @@ namespace Curriculum_Info_Application.Controllers
                 }
 
                 TempData["SuccessMessage"] = "Data imported and saved successfully.";
+                newTransaction.import_endtime = DateTime.Now;
+                TimeSpan timeDifference = DateTime.Now - start;
+                newTransaction.import_duration = (int)timeDifference.TotalSeconds;
+                Transaction.InsertTransaction(newTransaction);
 
                 // Check files quantity
                 if (files.Count >= 2)
@@ -341,6 +363,15 @@ namespace Curriculum_Info_Application.Controllers
                     processedXml.Save("JoinedData.xml");             
                 }
 
+                Transaction updateTransaction = new Transaction();
+                updateTransaction.merged_filesize = Math.Round((GetFileSize("JoinedData.xml") / 1024.0), 1);
+                updateTransaction.joinkey1 = selectedColumn1 + " | " + selectedColumn2;
+                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4))
+                {
+                    updateTransaction.joinkey2 = selectedColumn3 + " | " + selectedColumn3;
+                }
+                Transaction.UpdateLastTransaction(updateTransaction);
+
                 TempData["SuccessMessage"] = "Data joined and saved successfully.";
                 ViewBag.ColumnsList1 = new SelectList(new List<string>());
                 ViewBag.ColumnsList2 = new SelectList(new List<string>());
@@ -354,6 +385,30 @@ namespace Curriculum_Info_Application.Controllers
             catch (Exception ex)
             {
                 throw new Exception($"Error joining and saving data to XML: {ex.Message}");
+            }
+        }
+
+        public long GetFileSize(string filePath)
+        {
+            try
+            {
+                if (System.IO.File.Exists(filePath))
+                {
+                    FileInfo fileInfo = new FileInfo(filePath);
+                    long fileSizeInBytes = fileInfo.Length;
+                    return fileSizeInBytes;
+                }
+                else
+                {
+                    // Handle the case where the file does not exist
+                    return -1; // or any other appropriate value
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur when accessing the file
+                Console.WriteLine($"Error: {ex.Message}");
+                return -1; // or any other appropriate value
             }
         }
 

@@ -90,5 +90,26 @@ namespace Curriculum_Info_Application.Models
                 return null; // Handle exceptions
             }
         }
+
+        public string GetCurrentUsername()
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(_filePath);
+                List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(jsonContent);
+
+                // Access the first user's username
+                if (users.Count > 0)
+                {
+                    return users[0].Username;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null; // Handle exceptions
+            }
+        }
+
     }
 }

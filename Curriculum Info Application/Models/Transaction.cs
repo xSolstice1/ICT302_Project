@@ -1,4 +1,5 @@
 ﻿using System.Data.OleDb;
+using Newtonsoft.Json;
 
 namespace Curriculum_Info_Application.Models
 {
@@ -11,76 +12,104 @@ namespace Curriculum_Info_Application.Models
         public int import_duration { get; set;}
         public int file_qty { get; set;}
         public string filename1 { get; set; }
-        public int filesize1 { get; set; }
+        public double filesize1 { get; set; }
         public string filetype1 { get; set; }
         public string filename2 { get; set; }
-        public int filesize2 { get; set; }
+        public double filesize2 { get; set; }
         public string filetype2 { get; set; }
-        public int merged_filesize { get; set; }
+        public double merged_filesize { get; set; }
         public string joinkey1 { get; set; }
         public string joinkey2 { get; set;}
 
-        public static bool insertTransaction4Upload(string connection, Transaction info)
-        {
-            OleDbConnection conn = new OleDbConnection(connection);
+        private static readonly string _filePath = "transaction.json";
 
+        private static readonly int _dataKeepDays = 10;
+
+        public static bool InsertTransaction(Transaction transaction)
+        {
             try
             {
-                conn.Open();
+                // Load existing transactions
+                var existingTransactions = LoadTransactions();
 
-                OleDbCommand cmdInsert = new OleDbCommand("INSERT INTO TRANSACTION (" +
-                    "TRANSACTION_DATE_TIME, " +
-                    "USER, " +
-                    "IMPORT_START_TIME, " +
-                    "IMPORT_END_TIME," +
-                    "IMPORT_DURATION, " +
-                    "FILE_QTY, " +
-                    "FILENAME_1, " +
-                    "FILESIZE_1, " +
-                    "FILETYPE_1, " +
-                    "FILENAME_2, " +
-                    "FILESIZE_2, " +
-                    "FILETYPE_2, " +
-                    "MERGED_FILESIZE, " +
-                    "JOINKEY_1, " +
-                    "JOINKEY_2) " +
-                    "VALUES " +
-                    "('" + DateTime.Now + "', " +
-                    "'" + info.user + "', " +
-                    "'" + DateTime.Now + "', " +
-                    "" + null + ", " +
-                    "" + null + ", " +
-                    "" + info.file_qty + ", " +
-                    "'" + info.filename1 + "', " +
-                    "" + info.filesize1 + ", " +
-                    "'" + info.filetype1 + "', " +
-                    "'" + info.filename2 + "', " +
-                    "" + info.filesize2 + ", " +
-                    "'" + info.filetype2 + "', " +
-                    "'" + DateTime.Now + "', " +
-                    "'" + DateTime.Now + "', " +
-                    "'" + DateTime.Now + "');"
-                    , conn);
+                // Add the new transaction
+                existingTransactions.Add(transaction);
 
-                // execute
-                int records = cmdInsert.ExecuteNonQuery();
+                // Serialize and save the updated transactions
+                string json = JsonConvert.SerializeObject(existingTransactions, Formatting.Indented);
+                File.WriteAllText(_filePath, json);
 
-
-                if (records > 0)
-                {
-                    return true;
-                }
-
-                return false;
+                return true;
             }
             catch (Exception ex)
             {
                 return false;
             }
-            finally
+        }
+
+        public static void DeleteOldTransactions()
+        {
+            try
             {
-                conn.Close();
+                var transactions = LoadTransactions();
+
+                if (transactions != null)
+                {
+                    var currentDate = DateTime.Now;
+
+                    // Remove transactions older than 'days' days
+                    transactions.RemoveAll(t => (currentDate - t.transaction_datetime).TotalDays > _dataKeepDays);
+
+                    // Serialize and save the updated transactions
+                    string json = JsonConvert.SerializeObject(transactions, Formatting.Indented);
+                    File.WriteAllText(_filePath, json);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
             }
         }
+
+        public static bool UpdateLastTransaction(Transaction updatedTransaction)
+        {
+            try
+            {
+                var transactions = LoadTransactions();
+
+                if (transactions.Count > 0)
+                {
+                    // Get the last transaction
+                    var lastTransaction = transactions[transactions.Count - 1];
+
+                    lastTransaction.merged_filesize = updatedTransaction.merged_filesize;
+                    lastTransaction.joinkey1 = updatedTransaction.joinkey1;
+                    lastTransaction.joinkey2 = updatedTransaction.joinkey2;
+
+                    // Serialize and save the updated transactions
+                    string json = JsonConvert.SerializeObject(transactions, Formatting.Indented);
+                    File.WriteAllText(_filePath, json);
+
+                    return true;
+                }
+                return false; // No transactions to update
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        private static List<Transaction> LoadTransactions()
+        {
+            if (File.Exists(_filePath))
+            {
+                string json = File.ReadAllText(_filePath);
+                return JsonConvert.DeserializeObject<List<Transaction>>(json);
+            }
+            return new List<Transaction>();
+        }
+
     }
 }
