@@ -18,6 +18,8 @@ namespace Curriculum_Info_Application.Controllers
         }
         public IActionResult Index()
         {
+            TempData["LoginErrorMessage"] = null;
+            TempData["LoginSuccessMessage"] = null;
             return View();
         }
 
@@ -26,12 +28,12 @@ namespace Curriculum_Info_Application.Controllers
         {
             if (LoginModel.checkCredential(_connection, model))
             {
-                return RedirectToAction("Import");
+                return RedirectToAction("Index", "Import");
             }
             else
             {
-                TempData["ErrorMessage"] = "Invalid username or password.";
-                return RedirectToAction("Index");
+                TempData["LoginErrorMessage"] = "Invalid username or password.";
+                return View("~/Views/Home/Login.cshtml");
             }
         }
 
@@ -40,12 +42,13 @@ namespace Curriculum_Info_Application.Controllers
         {
             if (LoginModel.insertNewUser(_connection, model))
             {
-                return RedirectToAction("Index");
+                TempData["LoginSuccessMessage"] = "Account created.";
+                return View("~/Views/Home/Login.cshtml");
             }
             else
             {
-                TempData["ErrorMessage"] = "Registration failed. Please try again.";
-                return RedirectToAction("Index");
+                TempData["LoginErrorMessage"] = "Registration failed. Please try again.";
+                return View("~/Views/Home/Login.cshtml");
             }
         }
     }

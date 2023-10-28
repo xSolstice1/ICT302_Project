@@ -39,7 +39,7 @@ namespace Curriculum_Info_Application.Controllers
             _conn = new OleDbConnection(_connection);
         }
 
-        public IActionResult Index()
+        public IActionResult Import()
         {
             TempData["SuccessMessage"] = null;
             TempData["CurrentPage"] = null;
@@ -348,17 +348,13 @@ namespace Curriculum_Info_Application.Controllers
             }
         }
 
-        public IActionResult Import()
-        {
-            return View();
-        }
         public IActionResult Export()
         {
             ViewBag.TableHeaders = new Dictionary<string, string>();
             ViewBag.TableRecord = new Dictionary<string, List<string>>();
             return RedirectToAction("Index", "Export");
         }
-        public IActionResult Login()
+        public IActionResult Index()
         {
             return View();
         } 

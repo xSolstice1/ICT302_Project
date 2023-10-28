@@ -17,7 +17,7 @@ namespace Curriculum_Info_Application.Models
             {
                 conn.Open();
 
-                OleDbCommand cmdInsert = new OleDbCommand("INSERT INTO USER (USER_EMAIL, USER_NAME, PASSWORD) VALUES " +
+                OleDbCommand cmdInsert = new OleDbCommand("INSERT INTO DCUSER (USER_EMAIL, USER_NAME, USER_PASSWORD) VALUES " +
                         "('" + info.Email + "', '" + info.Username + "', '" + info.Password + "');", conn);
 
                 // execute
@@ -49,8 +49,8 @@ namespace Curriculum_Info_Application.Models
             {
                 conn.Open();
 
-                OleDbCommand cmd_Query = new OleDbCommand("Select * from USER where USER_EMAIL = '" + info.Email + "'" +
-                    "AND PASSWORD = '" + info.Password + "';", conn);
+                OleDbCommand cmd_Query = new OleDbCommand("Select * from DCUSER where USER_EMAIL = '" + info.Email + "'" +
+                    "AND USER_PASSWORD = '" + info.Password + "';", conn);
 
                 OleDbDataAdapter adapter = new OleDbDataAdapter(cmd_Query);
                 DataTable dt = new DataTable();
