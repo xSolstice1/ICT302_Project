@@ -17,6 +17,13 @@
     </div>
 }
 
+@if (TempData["LoginWarningMessage"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["LoginWarningMessage"]
+    </div>
+}
+
 <div class="container content">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">

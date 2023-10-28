@@ -20,6 +20,7 @@ namespace Curriculum_Info_Application.Controllers
         {
             TempData["LoginErrorMessage"] = null;
             TempData["LoginSuccessMessage"] = null;
+            TempData["LoginWarningMessage"] = null;
             return View();
         }
 
@@ -28,7 +29,10 @@ namespace Curriculum_Info_Application.Controllers
         {
             if (LoginModel.checkCredential(_connection, model))
             {
-                return RedirectToAction("Index", "Import");
+                LoginModel loginModel = new LoginModel();
+                loginModel.isLogin = true;
+                TempData["LoginWarningMessage"] = null;
+                return View("~/Views/Home/Import.cshtml");
             }
             else
             {

@@ -8,37 +8,41 @@
 }
 
 <div class="container content">
-    <div class="import-container">
-        <h2 class="mb-4">Merge Data</h2>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card login-card">
+                <div class="card-header">
+                    <h2 class="text-center mb-4">Merge Data</h2>
+                </div>
+                <div class="card-body">
+                    <label for="joinKey" class="form-label">Select a join key 1:</label>
+                    @using (Html.BeginForm("JoinTables", "Home", FormMethod.Post, new { id = "mergeForm" }))
+                    {
+                        <div class="form-group">
+                            <label for="selectedColumn1">Select a column from File 1:</label>
+                            @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
+                        </div>
 
-        <div class="mb-3">
-            <label for="joinKey" class="form-label">Select a join key 1:</label>
-            @using (Html.BeginForm("JoinTables", "Home", FormMethod.Post, new { id = "mergeForm" }))
-            {
-                <div class="form-group">
-                    <label for="selectedColumn1">Select a column from File 1:</label>
-                    @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
-                </div>
+                        <div class="form-group">
+                            <label for="selectedColumn2">Select a column from File 2:</label>
+                            @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <label class="form-label">Select a join key 2 (Optional):</label>
+                        <div class="form-group">
+                            <label for="selectedColumn3">Select a column from File 2:</label>
+                            @Html.DropDownList("selectedColumn3", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
+                        </div>
 
-                <div class="form-group">
-                    <label for="selectedColumn2">Select a column from File 2:</label>
-                    @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
+                        <div class="form-group">
+                            <label for="selectedColumn4">Select a column from File 2:</label>
+                            @Html.DropDownList("selectedColumn4", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <button type="button" class="btn btn-primary" onclick="validateAndMerge()">Merge Files</button>
+                    }
                 </div>
-                <br />
-                <label class="form-label">Select a join key 2 (Optional):</label>
-                <div class="form-group">
-                    <label for="selectedColumn3">Select a column from File 2:</label>
-                    @Html.DropDownList("selectedColumn3", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
-                </div>
-
-                <div class="form-group">
-                    <label for="selectedColumn4">Select a column from File 2:</label>
-                    @Html.DropDownList("selectedColumn4", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
-                </div>
-                <br />
-                <button type="button" class="btn btn-primary" onclick="validateAndMerge()">Merge Files</button>
-                <!-- <button type="button" class="btn btn-primary" onclick="validateAndMerge()">Merge Files</button>-->
-            }
+            </div>
         </div>
     </div>
 </div>

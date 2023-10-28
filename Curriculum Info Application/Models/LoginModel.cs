@@ -9,6 +9,8 @@ namespace Curriculum_Info_Application.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
+        public bool isLogin { get; set; }
+
         public static bool insertNewUser(string connection, LoginModel info)
         {
             OleDbConnection conn = new OleDbConnection(connection);
