@@ -246,7 +246,6 @@ namespace Curriculum_Info_Application.Controllers
                 // Load the XML data from the two XML files
                 XDocument data1Xml = XDocument.Load("Data1.xml");
                 XDocument data2Xml = XDocument.Load("Data2.xml");
-                IEnumerable<XElement> joinedData = null;
 
                 foreach (var invalidChar in invalidChars)
                 {
@@ -259,37 +258,34 @@ namespace Curriculum_Info_Application.Controllers
                 }
 
                 // Join the XML data based on the specified columns
-                if (string.IsNullOrEmpty(selectedColumn3) || string.IsNullOrEmpty(selectedColumn4)) {
-                    joinedData = from record1 in data1Xml.Descendants("Record")
-                                    join record2 in data2Xml.Descendants("Record")
-                                    on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
-                                    select new XElement("Record",
-                                        record1.Elements(),
-                                        record2.Elements());
-                }
-                else {
-                    joinedData = from record1 in data1Xml.Descendants("Record")
+                var joinedData = from record1 in data1Xml.Descendants("Record")
                                 join record2 in data2Xml.Descendants("Record")
-                                on new
-                                {
-                                    Key1 = (string)record1.Element(selectedColumn1),
-                                    Key2 = (string)record1.Element(selectedColumn3)
-                                }
-                                equals new
-                                {
-                                    Key1 = (string)record2.Element(selectedColumn2),
-                                    Key2 = (string)record2.Element(selectedColumn4)
-                                }
+                                on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
                                 select new XElement("Record",
                                     record1.Elements(),
-                                    record2.Elements());
-                }
+                                    record2.Elements());              
 
                 // Process the XML to add numerical suffixes to duplicate element names
                 var processedXml = ProcessXml(joinedData);
 
                 // Save the processed XML data to a new XML file
                 processedXml.Save("JoinedData.xml");
+
+                //Check if Join Key 3 & 4 selected
+                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
+                    XDocument xmlJoin = XDocument.Load("JoinedData.xml");
+                    XDocument xmlJoin2 = XDocument.Load("Data2.xml");
+                    joinedData = from record1 in xmlJoin.Descendants("Record")
+                                join record2 in xmlJoin2.Descendants("Record")
+                                on (string)record1.Element(selectedColumn3) equals (string)record2.Element(selectedColumn4)
+                                select new XElement("Record",
+                                    record1.Elements(),
+                                    record2.Elements());   
+
+                     processedXml = ProcessXml(joinedData);
+
+                    processedXml.Save("JoinedData.xml");             
+                }
 
                 TempData["SuccessMessage"] = "Data joined and saved successfully.";
                 ViewBag.ColumnsList1 = new SelectList(new List<string>());
