@@ -338,3 +338,4 @@ C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\
 C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\ServiceStack.Text.dll
 C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\Debug\net6.0\ServiceStack.Text.dll
+C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\user.json

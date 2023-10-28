@@ -8,16 +8,6 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _connection;
-        private OleDbConnection _conn;
-
-        public LoginController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _connection = _configuration.GetConnectionString("DefaultConnection");
-            _conn = new OleDbConnection(_connection);
-        }
         public IActionResult Index()
         {
             TempData["LoginErrorMessage"] = null;
@@ -30,13 +20,13 @@ namespace Curriculum_Info_Application.Controllers
         [HttpPost]
         public IActionResult Login(LoginModel model)
         {
-            if (LoginModel.checkCredential(_connection, model))
+            if (LoginModel.checkCredential(model))
             {
                 TempData["LoginWarningMessage"] = null;
                 var data = new LoginModel
                 {
                     Email = model.Email,
-                    Username = LoginModel.getUsernameByEmail(_connection, model)
+                    Username = LoginModel.getUsernameByEmail(model.Email)
                 };
 
                 string filePath = "login.json";
@@ -62,7 +52,7 @@ namespace Curriculum_Info_Application.Controllers
         [HttpPost]
         public IActionResult Signup(LoginModel model)
         {
-            if (LoginModel.insertNewUser(_connection, model))
+            if (LoginModel.insertNewUser(model))
             {
                 TempData["LoginSuccessMessage"] = "Account created.";
                 return View("~/Views/Home/Index.cshtml");

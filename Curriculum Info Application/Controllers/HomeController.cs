@@ -25,19 +25,9 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _connection;
-        private OleDbConnection _conn;
         private ImportModel model = new ImportModel();
         private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' ,'>','<','&','\'','"'};
         private char validChar = '_';
-
-        public HomeController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _connection = _configuration.GetConnectionString("DefaultConnection");
-            _conn = new OleDbConnection(_connection);
-        }
 
         public IActionResult Import()
         {
@@ -418,6 +408,15 @@ namespace Curriculum_Info_Application.Controllers
         }
         public IActionResult Index()
         {
+            TempData["SuccessMessage"] = null;
+            TempData["CurrentPage"] = null;
+            TempData["LoginErrorMessage"] = null;
+            TempData["LoginSuccessMessage"] = null;
+            TempData["LoginWarningMessage"] = null;
+            TempData["LoginInfoMessage"] = null;
+            TempData["ExportSuccess"] = null;
+            TempData["ImportError"] = null;
+            TempData["ExportError"] = null;
             return View();
         }
         public IActionResult Logout()

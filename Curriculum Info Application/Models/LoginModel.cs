@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.OleDb;
+using Newtonsoft.Json;
 
 namespace Curriculum_Info_Application.Models
 {
@@ -8,103 +9,85 @@ namespace Curriculum_Info_Application.Models
         public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        private static readonly string _filePath = "user.json";
 
-        public bool isLogin { get; set; }
-
-        public static bool insertNewUser(string connection, LoginModel info)
+        public static bool insertNewUser(LoginModel info)
         {
-            OleDbConnection conn = new OleDbConnection(connection);
-
             try
             {
-                conn.Open();
+                List<LoginModel> users;
 
-                OleDbCommand cmdInsert = new OleDbCommand("INSERT INTO DCUSER (USER_EMAIL, USER_NAME, USER_PASSWORD) VALUES " +
-                        "('" + info.Email + "', '" + info.Username + "', '" + info.Password + "');", conn);
-
-                // execute
-                int records = cmdInsert.ExecuteNonQuery();
-
-
-                if (records > 0)
+                // Read the existing JSON data from the file
+                if (File.Exists(_filePath))
                 {
-                    return true;
+                    string json = File.ReadAllText(_filePath);
+                    users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+                }
+                else
+                {
+                    users = new List<LoginModel>();
                 }
 
-                return false;
+                // Add the new user to the list
+                users.Add(info);
+
+                // Serialize the list back to JSON and write it to the file
+                string updatedJson = JsonConvert.SerializeObject(users, Formatting.Indented);
+                File.WriteAllText(_filePath, updatedJson);
+
+                return true;
             }
             catch (Exception ex)
             {
                 return false;
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
-        public static bool checkCredential(string connection, LoginModel info)
+        public static bool checkCredential(LoginModel info)
         {
-            OleDbConnection conn = new OleDbConnection(connection);
-
             try
             {
-                conn.Open();
-
-                OleDbCommand cmd_Query = new OleDbCommand("Select * from DCUSER where USER_EMAIL = '" + info.Email + "'" +
-                    "AND USER_PASSWORD = '" + info.Password + "';", conn);
-
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd_Query);
-                DataTable dt = new DataTable();
-                int result = adapter.Fill(dt);
-
-                // check if record exist in database
-                if (result > 0)
+                if (File.Exists(_filePath))
                 {
-                    return true;
+                    string json = File.ReadAllText(_filePath);
+                    List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+
+                    // Check if user credentials match any user in the list
+                    return users.Any(user => user.Email == info.Email && user.Password == info.Password);
                 }
 
-                return false;
+                return false; // File not found, no matching user
             }
             catch (Exception ex)
             {
                 return false;
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
-        public static string getUsernameByEmail(string connection, LoginModel info)
-        {
-            OleDbConnection conn = new OleDbConnection(connection);
 
+        public static string getUsernameByEmail(string email)
+        {
             try
             {
-                conn.Open();
-
-                OleDbCommand cmd_Query = new OleDbCommand("Select USER_NAME from DCUSER where USER_EMAIL = '" + info.Email + "';", conn);
-
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd_Query);
-                DataTable dt = new DataTable();
-                int result = adapter.Fill(dt);
-
-                // check if record exist in database
-                if (result > 0)
+                if (File.Exists(_filePath))
                 {
-                    return dt.Rows[0]["USER_NAME"].ToString();
+                    string json = File.ReadAllText(_filePath);
+                    List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+
+                    // Find the user with the specified email
+                    var user = users.Find(u => u.Email == email);
+
+                    if (user != null)
+                    {
+                        return user.Username;
+                    }
                 }
 
-                return null;
+                return null; // User not found or file doesn't exist
             }
             catch (Exception ex)
             {
-                return null;
-            }
-            finally
-            {
-                conn.Close();
+                return null; // Handle exceptions
             }
         }
     }
