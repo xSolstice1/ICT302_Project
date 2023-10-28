@@ -239,27 +239,49 @@ namespace Curriculum_Info_Application.Controllers
         }
 
         [HttpPost]
-        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2)
+        public IActionResult JoinTables(string selectedColumn1, string selectedColumn2, string selectedColumn3, string selectedColumn4)
         {
             try
             {
                 // Load the XML data from the two XML files
                 XDocument data1Xml = XDocument.Load("Data1.xml");
                 XDocument data2Xml = XDocument.Load("Data2.xml");
+                IEnumerable<XElement> joinedData = null;
 
                 foreach (var invalidChar in invalidChars)
                 {
                     selectedColumn1 = selectedColumn1.Replace(invalidChar, validChar);
                     selectedColumn2 = selectedColumn2.Replace(invalidChar, validChar);
+                    selectedColumn3 = selectedColumn3.Replace(invalidChar, validChar);
+                    selectedColumn4 = selectedColumn4.Replace(invalidChar, validChar);
                 }
 
                 // Join the XML data based on the specified columns
-                var joinedData = from record1 in data1Xml.Descendants("Record")
-                                 join record2 in data2Xml.Descendants("Record")
-                                 on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
-                                 select new XElement("Record",
-                                     record1.Elements(),
-                                     record2.Elements());
+                if (string.IsNullOrEmpty(selectedColumn3) || string.IsNullOrEmpty(selectedColumn4)) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                    join record2 in data2Xml.Descendants("Record")
+                                    on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
+                                    select new XElement("Record",
+                                        record1.Elements(),
+                                        record2.Elements());
+                }
+                else {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                join record2 in data2Xml.Descendants("Record")
+                                on new
+                                {
+                                    Key1 = (string)record1.Element(selectedColumn1),
+                                    Key2 = (string)record1.Element(selectedColumn3)
+                                }
+                                equals new
+                                {
+                                    Key1 = (string)record2.Element(selectedColumn2),
+                                    Key2 = (string)record2.Element(selectedColumn4)
+                                }
+                                select new XElement("Record",
+                                    record1.Elements(),
+                                    record2.Elements());
+                }
 
                 // Process the XML to add numerical suffixes to duplicate element names
                 var processedXml = ProcessXml(joinedData);
