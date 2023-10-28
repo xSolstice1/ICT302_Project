@@ -252,8 +252,10 @@ namespace Curriculum_Info_Application.Controllers
                 {
                     selectedColumn1 = selectedColumn1.Replace(invalidChar, validChar);
                     selectedColumn2 = selectedColumn2.Replace(invalidChar, validChar);
-                    selectedColumn3 = selectedColumn3.Replace(invalidChar, validChar);
-                    selectedColumn4 = selectedColumn4.Replace(invalidChar, validChar);
+                    if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
+                        selectedColumn3 = selectedColumn3.Replace(invalidChar, validChar);
+                        selectedColumn4 = selectedColumn4.Replace(invalidChar, validChar);
+                    }
                 }
 
                 // Join the XML data based on the specified columns
