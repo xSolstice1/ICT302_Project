@@ -12,6 +12,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -34,13 +35,13 @@
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Import">Import</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"> >> </a>
+                                <a class="nav-link no-hover-effect"> >> </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link @(TempData["CurrentPage"]?.ToString() == "Merge" ? "active" : "")">Merge</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"> >> </a>
+                                <a class="nav-link no-hover-effect"> >> </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link @(TempData["CurrentPage"]?.ToString() == "Export" ? "active" : "")">Export</a>

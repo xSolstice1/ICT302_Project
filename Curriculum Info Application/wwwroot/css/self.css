@@ -23,6 +23,13 @@ footer {
     border-top: 1px solid #ccc; 
 }
 
+.no-hover-effect {
+    text-decoration: none !important;
+    color: #fff !important;
+    pointer-events: none;
+    cursor: default;
+}
+
 .content .signup-container {
     flex: 1;
     padding-top: 50px;
@@ -46,6 +53,17 @@ footer {
         transform: scale(1.05);
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
     }
+}
+
+.navbar-brand img {
+    width: 150px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .card .card-body {
@@ -80,10 +98,6 @@ box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 
 .navbar-brand {
     color: #fff;
-}
-
-.navbar-toggler-icon {
-    background-color: #fff;
 }
 
 .navbar-nav .nav-item {
