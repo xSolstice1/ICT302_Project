@@ -279,7 +279,17 @@ namespace Curriculum_Info_Application.Controllers
                 }
 
                 // Join the XML data based on the specified columns // jointype selected
-                if (joinType.ToLower().Equals("innerjoin")) {
+                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                let key1_1 = (string)record1.Element(selectedColumn1)
+                                let key2_1 = (string)record1.Element(selectedColumn3)
+                                from record2 in data2Xml.Descendants("Record")
+                                let key1_2 = (string)record2.Element(selectedColumn2)
+                                let key2_2 = (string)record2.Element(selectedColumn4)
+                                where key1_1 == key1_2 && key2_1 == key2_2
+                                select new XElement("Record", record1.Elements(), record2.Elements());
+                }
+                else if (joinType.ToLower().Equals("innerjoin")) {
                     joinedData = from record1 in data1Xml.Descendants("Record")
                                     join record2 in data2Xml.Descendants("Record")
                                     on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
@@ -420,7 +430,11 @@ namespace Curriculum_Info_Application.Controllers
             {
                 var joinedRecord = new XElement("Record");
                 Dictionary<string, int> elementCounts = new Dictionary<string, int>();
+<<<<<<< Updated upstream
 
+=======
+                
+>>>>>>> Stashed changes
                 foreach (var element in record.Elements())
                 {
                     string elementName = element.Name.LocalName;
