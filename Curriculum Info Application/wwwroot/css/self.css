@@ -1,8 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-background-color: #f8f9fa; /* Set a light background color */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: auto;
+    background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: #555;
+    font-size: 18px;
+    border-top: 1px solid #ccc; 
 }
 
 .content .signup-container {
@@ -10,36 +28,77 @@ background-color: #f8f9fa; /* Set a light background color */
     padding-top: 50px;
 }
 
+.btn-new {
+    animation: flicker 2s infinite alternate; 
+    transition: box-shadow 0.3s; 
+}
+
+.btn-new:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: scale(1); 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+    }
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.card .card-body form {
+    text-align: center;
+}
+
+.card .card-body .btn {
+    margin-top: 15px; /* Optional: Adjust top margin for spacing */
+}
+
 .login-card {
-background-color: #ffffff; /* Set a white background color for the card */
+background-color: #ffffff;
 border-radius: 15px;
-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-nav li.nav-item {
-padding: 0 80px; /* Adjust the padding as needed */
+    padding: 0 50px;
 }
 
-.navbar-nav li.nav-item a {
-padding: 10px 15px;
-text-decoration: none;
-color: #333; /* Default text color */
+.navbar {
+    background-color: #333;
 }
 
-.navbar-nav li.nav-item a:hover {
-color: red !important; /* Text color on hover */
-background-image: linear-gradient(to right, yellow, yellow); /* Yellow underline on hover */
-background-position: 0 90%;
-background-repeat: no-repeat;
-background-size: 100% 0.2em;
+.navbar-brand {
+    color: #fff;
 }
 
-.navbar-nav li.nav-item .nav-link.active {
-color: red !important; /* Change text color for active Merge and Export */
-background-image: linear-gradient(to right, yellow, yellow); /* Yellow underline on hover */
-background-position: 0 90%;
-background-repeat: no-repeat;
-background-size: 100% 0.2em;
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.navbar-nav .nav-item {
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .import-container {
