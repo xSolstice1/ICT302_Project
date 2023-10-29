@@ -430,11 +430,6 @@ namespace Curriculum_Info_Application.Controllers
             {
                 var joinedRecord = new XElement("Record");
                 Dictionary<string, int> elementCounts = new Dictionary<string, int>();
-<<<<<<< Updated upstream
-
-=======
-                
->>>>>>> Stashed changes
                 foreach (var element in record.Elements())
                 {
                     string elementName = element.Name.LocalName;
