@@ -21,7 +21,7 @@ namespace Curriculum_Info_Application.Models
         public string joinkey1 { get; set; }
         public string joinkey2 { get; set;}
 
-        private static readonly string _filePath = "transaction.json";
+        private static readonly string _filePath = SystemConstant.TRANSACTION_FILEPATH;
 
         private static readonly int _dataKeepDays = 10;
 

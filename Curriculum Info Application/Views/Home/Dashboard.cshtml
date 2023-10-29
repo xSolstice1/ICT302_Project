@@ -83,7 +83,7 @@
             success: function (data) {
                 var layout = {
                     title: 'Import Duration Matrix',
-                    xaxis: { title: 'File Size' },
+                    xaxis: { title: 'File Size (KBs)' },
                     yaxis: { title: 'Import Duration (seconds)' }
                 };
                 Plotly.newPlot('import-duration-chart', [data], layout);

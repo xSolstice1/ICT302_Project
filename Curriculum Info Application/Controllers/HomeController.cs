@@ -38,11 +38,11 @@ namespace Curriculum_Info_Application.Controllers
             TempData["CurrentPage"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
-            DeleteIfFileExists("Data1.xml");
-            DeleteIfFileExists("Data2.xml");
-            DeleteIfFileExists("JoinedData.xml");
+            DeleteIfFileExists(SystemConstant.DATA1_FILEPATH);
+            DeleteIfFileExists(SystemConstant.DATA2_FILEPATH);
+            DeleteIfFileExists(SystemConstant.JOINEDDATA_FILEPATH);
             //elementCounts = new Dictionary<string, int>();
-            if (!System.IO.File.Exists("login.json"))
+            if (!System.IO.File.Exists(SystemConstant.LOGIN_FILEPATH))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");
@@ -250,7 +250,7 @@ namespace Curriculum_Info_Application.Controllers
 
                 // Save to XML file
                 string xmlFilePath = $"Data{i}.xml";
-                xmlDocument.Save(xmlFilePath);
+                xmlDocument.Save(SystemConstant.ROOT_PATH + xmlFilePath);
             }
             catch (Exception ex)
             {
@@ -264,8 +264,8 @@ namespace Curriculum_Info_Application.Controllers
             try
             {
                 // Load the XML data from the two XML files
-                XDocument data1Xml = XDocument.Load("Data1.xml");
-                XDocument data2Xml = XDocument.Load("Data2.xml");
+                XDocument data1Xml = XDocument.Load(SystemConstant.DATA1_FILEPATH);
+                XDocument data2Xml = XDocument.Load(SystemConstant.DATA2_FILEPATH);
                 IEnumerable<XElement> joinedData = null;
 
                 foreach (var invalidChar in invalidChars)
@@ -354,10 +354,10 @@ namespace Curriculum_Info_Application.Controllers
                 var processedXml = ProcessXml(joinedData);
 
                 // Save the processed XML data to a new XML file
-                processedXml.Save("JoinedData.xml");
+                processedXml.Save(SystemConstant.JOINEDDATA_FILEPATH);
 
                 Transaction updateTransaction = new Transaction();
-                updateTransaction.merged_filesize = Math.Round((GetFileSize("JoinedData.xml") / 1024.0), 1);
+                updateTransaction.merged_filesize = Math.Round((GetFileSize(SystemConstant.JOINEDDATA_FILEPATH) / 1024.0), 1);
                 updateTransaction.joinkey1 = selectedColumn1 + " | " + selectedColumn2;
                 if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4))
                 {
@@ -465,7 +465,7 @@ namespace Curriculum_Info_Application.Controllers
             TempData["ExportSuccess"] = null;
             TempData["ImportError"] = null;
             TempData["ExportError"] = null;
-            if (System.IO.File.Exists("../Curriculum Info Application/bin/Debug/net6.0/login.json"))
+            if (System.IO.File.Exists(SystemConstant.LOGIN_FILEPATH))
             {
                 return View("~/Views/Home/Import.cshtml");
             }
@@ -473,7 +473,7 @@ namespace Curriculum_Info_Application.Controllers
         }
         public IActionResult Logout()
         {
-            System.IO.File.Delete("../Curriculum Info Application/bin/Debug/net6.0/login.json");
+            System.IO.File.Delete(SystemConstant.LOGIN_FILEPATH);
             return View("Index");
         }
         public IActionResult Signup()
@@ -483,7 +483,7 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Dashboard()
         {
             LoginModel loginModel = new LoginModel();
-            if(!System.IO.File.Exists("../Curriculum Info Application/bin/Debug/net6.0/login.json"))
+            if(!System.IO.File.Exists(SystemConstant.LOGIN_FILEPATH))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");

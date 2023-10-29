@@ -9,7 +9,7 @@ namespace Curriculum_Info_Application.Models
         public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        private static readonly string _filePath = "user.json";
+        private static readonly string _filePath = SystemConstant.USER_FILEPATH;
 
         public static bool insertNewUser(LoginModel info)
         {
@@ -95,7 +95,7 @@ namespace Curriculum_Info_Application.Models
         {
             try
             {
-                string jsonContent = File.ReadAllText("../Curriculum Info Application/bin/Debug/net6.0/login.json");
+                string jsonContent = File.ReadAllText(SystemConstant.LOGIN_FILEPATH);
                 LoginModel user = JsonConvert.DeserializeObject<LoginModel>(jsonContent);
 
                 return user.Username;

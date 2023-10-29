@@ -20,7 +20,7 @@ namespace Curriculum_Info_Application.Controllers
                 TempData["ImportError"] = null;
                 TempData["ExportError"] = null;
 
-                string filename = System.IO.File.Exists("JoinedData.xml") ? "JoinedData.xml" : "Data1.xml";
+                string filename = System.IO.File.Exists(SystemConstant.JOINEDDATA_FILEPATH) ? SystemConstant.JOINEDDATA_FILEPATH : SystemConstant.DATA1_FILEPATH;
 
                 // Load the XML data from the joined XML file
                 XDocument joinedXml = XDocument.Load(filename);
@@ -117,7 +117,7 @@ namespace Curriculum_Info_Application.Controllers
                 // Split the selected column names
                 var selectedColumnList = selectedColumns.Split(',');
 
-                string filename = System.IO.File.Exists("JoinedData.xml") ? "JoinedData.xml" : "Data1.xml";
+                string filename = System.IO.File.Exists(SystemConstant.JOINEDDATA_FILEPATH) ? SystemConstant.JOINEDDATA_FILEPATH : SystemConstant.DATA1_FILEPATH;
                 // Load the XML file
                 XDocument xmlDocument = XDocument.Load(filename);
 

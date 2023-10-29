@@ -45,7 +45,7 @@ namespace Curriculum_Info_Application.Controllers
 
             // Process data for the Import Rate by File Type Pie Chart
             var fileTypes = transactions.Select(t => t.filetype1).ToList();
-            fileTypes.AddRange(transactions.Select(t => t.filetype2));
+            fileTypes.AddRange(transactions.Select(t => t.filetype2).Where(type => type != null)); // Filter out null values
 
             // Count the occurrences of each file type
             var fileTypeCounts = fileTypes.GroupBy(type => type)
@@ -60,6 +60,7 @@ namespace Curriculum_Info_Application.Controllers
 
             return Json(chartData); // Return the chart data as JSON
         }
+
 
         public IActionResult LoadUserUsage()
         {
@@ -87,9 +88,9 @@ namespace Curriculum_Info_Application.Controllers
         {
             string json = null;
 
-            if (System.IO.File.Exists("transaction.json"))
+            if (System.IO.File.Exists(SystemConstant.TRANSACTION_FILEPATH))
             {
-                json = System.IO.File.ReadAllText("transaction.json");
+                json = System.IO.File.ReadAllText(SystemConstant.TRANSACTION_FILEPATH);
             }
 
             // Deserialize JSON data into a list of TransactionHistory objects

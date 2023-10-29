@@ -29,7 +29,7 @@ namespace Curriculum_Info_Application.Controllers
                     Username = LoginModel.getUsernameByEmail(model.Email)
                 };
 
-                string filePath = "../Curriculum Info Application/bin/Debug/net6.0/login.json";
+                string filePath = SystemConstant.LOGIN_FILEPATH;
 
                 // Use a StreamWriter to write to the JSON file
                 using (StreamWriter streamWriter = new StreamWriter(filePath))
