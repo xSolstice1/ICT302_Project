@@ -356,22 +356,6 @@ namespace Curriculum_Info_Application.Controllers
                 // Save the processed XML data to a new XML file
                 processedXml.Save("JoinedData.xml");
 
-                //Check if Join Key 3 & 4 selected
-                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
-                    XDocument xmlJoin = XDocument.Load("JoinedData.xml");
-                    XDocument xmlJoin2 = XDocument.Load("Data2.xml");
-                    joinedData = from record1 in xmlJoin.Descendants("Record")
-                                join record2 in xmlJoin2.Descendants("Record")
-                                on (string)record1.Element(selectedColumn3) equals (string)record2.Element(selectedColumn4)
-                                select new XElement("Record",
-                                    record1.Elements(),
-                                    record2.Elements());   
-
-                     processedXml = ProcessXml(joinedData);
-
-                    processedXml.Save("JoinedData.xml");             
-                }
-
                 Transaction updateTransaction = new Transaction();
                 updateTransaction.merged_filesize = Math.Round((GetFileSize("JoinedData.xml") / 1024.0), 1);
                 updateTransaction.joinkey1 = selectedColumn1 + " | " + selectedColumn2;
