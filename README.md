@@ -25,6 +25,12 @@ Overall, this application serves as a user-friendly bridge between non-technical
 **Compatibility:** The application should support various file formats, including CSV and XLSX, to accommodate different data sources.
 
 **Empowerment:** Empowers users to extract meaningful insights and create customized reports tailored to their specific requirements.
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/X45K1W4/app1.jpg)
+![App Screenshot](https://i.ibb.co/6DL0gj7/app2.jpg)
+![App Screenshot](https://i.ibb.co/DkQV1Sg/app3.jpg)
+![App Screenshot](https://i.ibb.co/LCLNKkR/app4.jpg)
 ## Run Locally
 
 Clone the project
