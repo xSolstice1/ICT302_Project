@@ -26,7 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        @if (System.IO.File.Exists("login.json"))
+                        @if (System.IO.File.Exists("../Curriculum Info Application/bin/Debug/net6.0/login.json"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>

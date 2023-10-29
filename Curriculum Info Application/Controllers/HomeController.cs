@@ -471,7 +471,7 @@ namespace Curriculum_Info_Application.Controllers
             TempData["ExportSuccess"] = null;
             TempData["ImportError"] = null;
             TempData["ExportError"] = null;
-            if (System.IO.File.Exists("login.json"))
+            if (System.IO.File.Exists("../Curriculum Info Application/bin/Debug/net6.0/login.json"))
             {
                 return View("~/Views/Home/Import.cshtml");
             }
@@ -479,7 +479,7 @@ namespace Curriculum_Info_Application.Controllers
         }
         public IActionResult Logout()
         {
-            System.IO.File.Delete("login.json");
+            System.IO.File.Delete("../Curriculum Info Application/bin/Debug/net6.0/login.json");
             return View("Index");
         }
         public IActionResult Signup()
@@ -489,7 +489,7 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Dashboard()
         {
             LoginModel loginModel = new LoginModel();
-            if(!System.IO.File.Exists("login.json"))
+            if(!System.IO.File.Exists("../Curriculum Info Application/bin/Debug/net6.0/login.json"))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
                 return View("Index");

@@ -95,15 +95,10 @@ namespace Curriculum_Info_Application.Models
         {
             try
             {
-                string jsonContent = File.ReadAllText(_filePath);
-                List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(jsonContent);
+                string jsonContent = File.ReadAllText("../Curriculum Info Application/bin/Debug/net6.0/login.json");
+                LoginModel user = JsonConvert.DeserializeObject<LoginModel>(jsonContent);
 
-                // Access the first user's username
-                if (users.Count > 0)
-                {
-                    return users[0].Username;
-                }
-                return null;
+                return user.Username;
             }
             catch (Exception ex)
             {
