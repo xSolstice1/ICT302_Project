@@ -1,5 +1,5 @@
 
-# ICT302 Project
+# ICT302 Project - Curriculum Info Application
 
 The project aims to develop an intuitive and user-friendly application that empowers end users, who may not have a technical background, to efficiently combine, filter, group, and manipulate data from CourseLoop reports and other common sources. The application simplifies the data consolidation process, eliminating the need for advanced Excel or Power Query skills. Users can easily create a unified dataset for their specific needs.
 
