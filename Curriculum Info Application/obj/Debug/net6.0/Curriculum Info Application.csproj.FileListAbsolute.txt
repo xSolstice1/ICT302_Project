@@ -340,6 +340,6 @@ C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Applica
 C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\Debug\net6.0\ServiceStack.Text.dll
 C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\Debug\net6.0\transaction.json
 C:\Users\xsols\OneDrive\Documents\ICT302Project\Curriculum Info Application\bin\Debug\net6.0\user.json
-C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\data\login.json
 C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\data\transaction.json
 C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\data\user.json
+C:\Users\cckkt\Desktop\ICT302\Application\ICT302_Project\Curriculum Info Application\bin\Debug\net6.0\docs\site\search\search_index.json
