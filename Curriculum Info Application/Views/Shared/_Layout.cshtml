@@ -8,37 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/self.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Curriculum_Info_Application.styles.css" asp-append-version="true" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <style>
-        /* Custom styles for the dark-themed navbar */
-        .navbar {
-            background-color: #333; /* Dark background color */
-        }
-
-        .navbar-brand {
-            color: #fff; /* Text color for the brand */
-        }
-
-        .navbar-toggler-icon {
-            background-color: #fff; /* Color for the toggle icon */
-        }
-
-        .navbar-nav .nav-item {
-            padding: 10px 15px; /* Adjust the padding as needed */
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff; /* Text color for the links */
-        }
-
-        .navbar-nav .nav-link:hover {
-            background-color: #555; /* Hover color for the links */
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -66,7 +39,7 @@
                             <li class="nav-item">
                                 <a class="nav-link @(TempData["CurrentPage"]?.ToString() == "Merge" ? "active" : "")">Merge</a>
                             </li>
-                            <li class "nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link"> >> </a>
                             </li>
                             <li class="nav-item">
