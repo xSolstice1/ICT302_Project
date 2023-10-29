@@ -25,14 +25,14 @@ Update 9/26/2023 [Jinwei]
 - Importing to database generally works now
 - Added temporary check for duplicate table name
 
-  Update 10/3/2023 [CK]
+Update 10/3/2023 [CK]
 
 - Added Pager for export screen
 - Update from using SQL to LINQ
 
-  Update 10/28/2023 [CK, Jinwei]
+Update 10/28/2023 [CK, Jinwei]
 
-  - Added dashboard
-  - Added login functionalities
-  - Added different kinds of join
-  - UI update
+- Added dashboard
+- Added login functionalities
+- Added different kinds of join
+- UI update
