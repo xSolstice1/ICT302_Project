@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Record>
+    <A>1</A>
+    <B>2</B>
+    <C>3</C>
+    <A1>1</A1>
+    <C1>3</C1>
+    <D>5</D>
+  </Record>
+  <Record>
+    <A>1</A>
+    <B>5</B>
+    <C>5</C>
+    <A1>1</A1>
+    <C1>5</C1>
+    <D>9</D>
+  </Record>
+</Data>

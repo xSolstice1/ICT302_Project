@@ -1,0 +1,10 @@
+site_name: Curriculum Info Application
+nav:
+  - Home: index.md
+  - About: about.md
+  - User-Guide: userguide.md
+  - Files: files.md
+
+theme:
+  name: mkdocs
+  nav_style: dark
