@@ -279,7 +279,17 @@ namespace Curriculum_Info_Application.Controllers
                 }
 
                 // Join the XML data based on the specified columns // jointype selected
-                if (joinType.ToLower().Equals("innerjoin")) {
+                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
+                    joinedData = from record1 in data1Xml.Descendants("Record")
+                                let key1_1 = (string)record1.Element(selectedColumn1)
+                                let key2_1 = (string)record1.Element(selectedColumn3)
+                                from record2 in data2Xml.Descendants("Record")
+                                let key1_2 = (string)record2.Element(selectedColumn2)
+                                let key2_2 = (string)record2.Element(selectedColumn4)
+                                where key1_1 == key1_2 && key2_1 == key2_2
+                                select new XElement("Record", record1.Elements(), record2.Elements());
+                }
+                else if (joinType.ToLower().Equals("innerjoin")) {
                     joinedData = from record1 in data1Xml.Descendants("Record")
                                     join record2 in data2Xml.Descendants("Record")
                                     on (string)record1.Element(selectedColumn1) equals (string)record2.Element(selectedColumn2)
@@ -346,22 +356,6 @@ namespace Curriculum_Info_Application.Controllers
                 // Save the processed XML data to a new XML file
                 processedXml.Save("JoinedData.xml");
 
-                //Check if Join Key 3 & 4 selected
-                if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
-                    XDocument xmlJoin = XDocument.Load("JoinedData.xml");
-                    XDocument xmlJoin2 = XDocument.Load("Data2.xml");
-                    joinedData = from record1 in xmlJoin.Descendants("Record")
-                                join record2 in xmlJoin2.Descendants("Record")
-                                on (string)record1.Element(selectedColumn3) equals (string)record2.Element(selectedColumn4)
-                                select new XElement("Record",
-                                    record1.Elements(),
-                                    record2.Elements());   
-
-                     processedXml = ProcessXml(joinedData);
-
-                    processedXml.Save("JoinedData.xml");             
-                }
-
                 Transaction updateTransaction = new Transaction();
                 updateTransaction.merged_filesize = Math.Round((GetFileSize("JoinedData.xml") / 1024.0), 1);
                 updateTransaction.joinkey1 = selectedColumn1 + " | " + selectedColumn2;
@@ -420,7 +414,6 @@ namespace Curriculum_Info_Application.Controllers
             {
                 var joinedRecord = new XElement("Record");
                 Dictionary<string, int> elementCounts = new Dictionary<string, int>();
-
                 foreach (var element in record.Elements())
                 {
                     string elementName = element.Name.LocalName;
