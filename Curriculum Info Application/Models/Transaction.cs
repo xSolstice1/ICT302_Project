@@ -85,6 +85,8 @@ namespace Curriculum_Info_Application.Models
                     lastTransaction.merged_filesize = updatedTransaction.merged_filesize;
                     lastTransaction.joinkey1 = updatedTransaction.joinkey1;
                     lastTransaction.joinkey2 = updatedTransaction.joinkey2;
+                    TimeSpan timeDifference = DateTime.Now - lastTransaction.import_starttime;
+                    lastTransaction.import_duration = (int)timeDifference.TotalSeconds;
 
                     // Serialize and save the updated transactions
                     string json = JsonConvert.SerializeObject(transactions, Formatting.Indented);

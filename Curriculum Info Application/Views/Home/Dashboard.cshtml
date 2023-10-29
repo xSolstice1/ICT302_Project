@@ -17,25 +17,33 @@
                 <div id="import-rate-chart"></div>
             </div>
         </div>
+
+        <!-- User usage bar chart -->
+        <div class="col-md-4">
+            <div class="chart-container">
+                <h3>User Usage</h3>
+                <div id="user-chart"></div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container mt-5">
     <!-- Transaction History -->
     <div class="col-md-12">
         <h3>Transaction History</h3>
-        <table class="table table-striped" style="width:100% !important;">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Date/Time</th>
                     <th>User</th>
                     <th>Import Start Time</th>
                     <th>Import End Time</th>
-                    <th>Import Duration</th>
                     <th>Filename 1</th>
-                    <th>File Size 1</th>
+                    <th>File Size 1(kb)</th>
                     <th>Filename 2</th>
-                    <th>File Size 2</th>
-                    <th>Merged File Size</th>
+                    <th>File Size 2(kb)</th>
+                    <th>Merged File Size(kb)</th>
+                    <th>Process Duration(sec)</th>
                     <th>Join Key 1</th>
                     <th>Join Key 2</th>
                     
@@ -49,12 +57,12 @@
                         <td>@transaction.user</td>
                         <td>@transaction.import_starttime</td>
                         <td>@transaction.import_endtime</td>
-                        <td>@transaction.import_duration</td>
                         <td>@transaction.filename1</td>
                         <td>@transaction.filesize1</td>
                         <td>@transaction.filename2</td>
                         <td>@transaction.filesize2</td>
                         <td>@transaction.merged_filesize</td>
+                        <td>@transaction.import_duration</td>
                         <td>@transaction.joinkey1</td>
                         <td>@transaction.joinkey2</td>
                     </tr>
@@ -66,19 +74,70 @@
 
 <!-- Script for generating dummy charts -->
 <script>
-    // Dummy import duration matrix chart
-    const importDurationChart = document.getElementById('import-duration-chart');
-    Plotly.newPlot(importDurationChart, [{
-        x: [1, 2, 3, 4],
-        y: [10, 15, 13, 17],
-        type: 'bar'
-    }]);
+    // Function to load Import Duration Matrix chart
+    function loadImportDurationMatrix() {
+        $.ajax({
+            url: '@Url.Action("ImportDurationMatrix", "Transaction")',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var layout = {
+                    title: 'Import Duration Matrix',
+                    xaxis: { title: 'File Size' },
+                    yaxis: { title: 'Import Duration (seconds)' }
+                };
+                Plotly.newPlot('import-duration-chart', [data], layout);
+            }
+        });
+    }
 
-    // Dummy import rate by file type pie chart
-    const importRateChart = document.getElementById('import-rate-chart');
-    Plotly.newPlot(importRateChart, [{
-        labels: ['CSV', 'Excel'],
-        values: [41, 59],
-        type: 'pie'
-    }]);
+    // Function to load Import Rate by File Type Pie Chart
+    function loadImportRateByFileType() {
+        $.ajax({
+            url: '@Url.Action("ImportRateByFileType", "Transaction")',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var pieData = [{
+                    labels: data.labels,
+                    values: data.values,
+                    type: 'pie'
+                }];
+                var layout = {
+                    title: 'Import Rate by File Type'
+                };
+                Plotly.newPlot('import-rate-chart', pieData, layout);
+            }
+        });
+    }
+
+    // Function to load user usage bar chart
+    function loadUserUsage() {
+        $.ajax({
+            url: '@Url.Action("LoadUserUsage", "Transaction")', // Correct the action name
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var barData = [{
+                    x: data.labels,
+                    y: data.values,
+                    type: 'bar'
+                }];
+                var layout = {
+                    title: 'User Usage',
+                    xaxis: { title: 'User Names' },
+                    yaxis: { title: 'Number of Transactions' }
+                };
+                Plotly.newPlot('user-chart', barData, layout);
+            }
+        });
+    }
+
+
+    // Load charts when the page is ready
+    $(document).ready(function () {
+        loadImportDurationMatrix();
+        loadImportRateByFileType();
+        loadUserUsage();
+    });
 </script>

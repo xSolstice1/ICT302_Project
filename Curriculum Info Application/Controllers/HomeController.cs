@@ -21,6 +21,7 @@ using System.Data.OleDb;
 using ServiceStack.Text;
 using CsvReader = CsvHelper.CsvReader;
 using ServiceStack;
+using System.Collections;
 
 namespace Curriculum_Info_Application.Controllers
 {
@@ -29,6 +30,7 @@ namespace Curriculum_Info_Application.Controllers
         private ImportModel model = new ImportModel();
         private char[] invalidChars = { '.', ' ', '(', ')', '/', '[', ']' ,'>','<','&','\'','"'};
         private char validChar = '_';
+        private Dictionary<string, int> elementCounts = new Dictionary<string, int>();
 
         public IActionResult Import()
         {
@@ -39,6 +41,7 @@ namespace Curriculum_Info_Application.Controllers
             DeleteIfFileExists("Data1.xml");
             DeleteIfFileExists("Data2.xml");
             DeleteIfFileExists("JoinedData.xml");
+            elementCounts = new Dictionary<string, int>();
             if (!System.IO.File.Exists("login.json"))
             {
                 TempData["LoginWarningMessage"] = "Please Login";
@@ -55,7 +58,6 @@ namespace Curriculum_Info_Application.Controllers
                 TempData["LoginInfoMessage"] = null;
                 List<List<string>> records = new List<List<string>>();
                 LoginModel loginModel = new LoginModel();
-                Transaction.DeleteOldTransactions();
                 Transaction newTransaction = new Transaction();
                 DateTime start = DateTime.Now;
                 newTransaction.transaction_datetime = start;
@@ -105,8 +107,6 @@ namespace Curriculum_Info_Application.Controllers
 
                 TempData["SuccessMessage"] = "Data imported and saved successfully.";
                 newTransaction.import_endtime = DateTime.Now;
-                TimeSpan timeDifference = DateTime.Now - start;
-                newTransaction.import_duration = (int)timeDifference.TotalSeconds;
                 Transaction.InsertTransaction(newTransaction);
 
                 // Check files quantity
@@ -376,6 +376,7 @@ namespace Curriculum_Info_Application.Controllers
                 ViewBag.ColumnsList2 = new SelectList(new List<string>());
                 ViewBag.TableHeaders = new Dictionary<string, string>();
                 ViewBag.TableRecord = new Dictionary<string, List<string>>();
+                elementCounts = new Dictionary<string, int>();
                 ViewBag.CurrentPage = 0;
                 ViewBag.TotalPages = 0;
                 TempData["CurrentPage"] = "Export";
@@ -418,8 +419,7 @@ namespace Curriculum_Info_Application.Controllers
             foreach (var record in joinedData)
             {
                 var joinedRecord = new XElement("Record");
-
-                Dictionary<string, int> elementCounts = new Dictionary<string, int>();
+                
                 foreach (var element in record.Elements())
                 {
                     string elementName = element.Name.LocalName;
@@ -471,6 +471,10 @@ namespace Curriculum_Info_Application.Controllers
             TempData["ExportSuccess"] = null;
             TempData["ImportError"] = null;
             TempData["ExportError"] = null;
+            if (System.IO.File.Exists("login.json"))
+            {
+                return View("~/Views/Home/Import.cshtml");
+            }
             return View();
         }
         public IActionResult Logout()
