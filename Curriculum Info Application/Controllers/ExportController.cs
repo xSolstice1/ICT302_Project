@@ -12,7 +12,7 @@ namespace Curriculum_Info_Application.Controllers
 {
     public class ExportController : Controller
     {
-        public IActionResult Index(int? page)
+        public IActionResult Index(int? page, string? filters)
         {
             try
             {
@@ -52,16 +52,29 @@ namespace Curriculum_Info_Application.Controllers
                                           .Select(record => headers.ToDictionary(header => header, header => (string)record.Element(header)))
                                           .ToList();
 
+                // Apply filtering if filters are provided
+                if (!string.IsNullOrEmpty(filters))
+                {
+                    // Parse the JSON filters into a dictionary
+                    var filterDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(filters);
+
+                    // Filter the records based on the provided filters
+                    allRecords = joinedXml.Descendants("Record")
+                        .Where(record => MatchesFilters(record, filterDictionary))
+                        .Select(record => headers.ToDictionary(header => header, header => (string)record.Element(header)))
+                                          .ToList();
+                }
+
                 List<KeyValuePair<string, List<string>>> tableRecord = new List<KeyValuePair<string, List<string>>>();
 
                 // Iterate over each joined record and extract values for each header
                 int recordIndex = 1;
-                foreach (var record in joinedXml.Descendants("Record"))
+                foreach (var record in allRecords)
                 {
                     List<string> recordValues = new List<string>();
                     foreach (var header in headers)
                     {
-                        recordValues.Add((string)record.Element(header));
+                        recordValues.Add(record[header]);
                     }
 
                     tableRecord.Add(new KeyValuePair<string, List<string>>(recordIndex.ToString(), recordValues));
@@ -149,7 +162,7 @@ namespace Curriculum_Info_Application.Controllers
             return View("~/Views/Home/Export.cshtml");
         }
 
-        private bool MatchesFilters(XElement record, Dictionary<string, string> filters)
+        private bool MatchesFilters(XElement record, Dictionary<string, string>? filters)
         {
             foreach (var filter in filters)
             {

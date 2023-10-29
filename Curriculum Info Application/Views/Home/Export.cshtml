@@ -96,53 +96,40 @@
         window.location.href = '@Url.Action("ExportToCsv", "Export")';
     });
 
+    // Function to filter the table based on user input
     function filterTable() {
-        // Get all the input elements within the search gadget
-        var inputs = document.querySelectorAll('.search-gadget input[type="text"]');
+        // Get the filter values
+        var filters = {};
+        var filterInputs = document.querySelectorAll('.search-gadget input[type="text"]');
 
-        // Get the table rows
-        var rows = document.querySelectorAll('#exportTable tbody tr');
+        filterInputs.forEach(function (input) {
+            var key = input.id;
+            var value = input.value.trim().toLowerCase(); // Trim and convert to lowercase
 
-        for (var i = 0; i < rows.length; i++) {
-            var row = rows[i];
-            var shouldShow = true;
-
-            for (var j = 0; j < inputs.length; j++) {
-                var input = inputs[j];
-                var columnIndex = j; // Assuming the column index matches the input index
-
-                var cell = row.cells[columnIndex];
-                var cellText = cell.textContent || cell.innerText;
-
-                // Convert both the input value and cell text to lowercase for case-insensitive search
-                var inputValue = input.value.toLowerCase();
-                var cellTextLower = cellText.toLowerCase();
-
-                if (cellTextLower.indexOf(inputValue) === -1) {
-                    shouldShow = false;
-                    break;  // No need to check other inputs for this row
-                }
+            // Only add to filters if the value is not empty
+            if (value) {
+                filters[key] = value;
             }
+        });
 
-            // Toggle row visibility based on the search result
-            row.style.display = shouldShow ? '' : 'none';
-        }
+        // Redirect to the index action with the filter parameters
+        var url = '@Url.Action("Index", "Export")'; // Change the URL to point to the Index action
+        url += '?filters=' + JSON.stringify(filters);
+        window.location.href = url;
     }
 
-    function clearFilters() {
-        // Get all the input elements within the search gadget
-        var inputs = document.querySelectorAll('.search-gadget input[type="text"]');
 
-        // Clear the input fields
-        inputs.forEach(function (input) {
+    // Function to clear the table filters and show all records
+    function clearTable() {
+        // Clear the filter input values
+        var filterInputs = document.querySelectorAll('.search-gadget input[type="text"]');
+        filterInputs.forEach(function (input) {
             input.value = '';
         });
 
-        // Show all rows in the table
-        var rows = document.querySelectorAll('#exportTable tbody tr');
-        rows.forEach(function (row) {
-            row.style.display = '';
-        });
+        // Redirect to the index action without any filters
+        var url = '@Url.Action("Index", "Export")'; // Change the URL to point to the Index action
+        window.location.href = url;
     }
 
     document.getElementById('exportButton').addEventListener('click', function () {
