@@ -24,12 +24,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="selectedColumn1">Select a column from File 1:</label>
+                                    <label for="selectedColumn1">Select a column from File 1(@(TempData["Filename1"] ?? "No File 1 Uploaded")):</label>
                                     @Html.DropDownList("selectedColumn1", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="selectedColumn2">Select a column from File 2:</label>
+                                    <label for="selectedColumn2">Select a column from File 2(@(TempData["Filename2"] ?? "No File 2 Uploaded")):</label>
                                     @Html.DropDownList("selectedColumn2", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
                                 </div>
                             </div>
@@ -40,12 +40,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="selectedColumn3">Select a column from File 2:</label>
+                                    <label for="selectedColumn3">Select a column from File 1(@(TempData["Filename1"] ?? "No File 1 Uploaded")):</label>
                                     @Html.DropDownList("selectedColumn3", ViewBag.ColumnsList1 as SelectList, "Select a column", new { @class = "form-control" })
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="selectedColumn4">Select a column from File 2:</label>
+                                    <label for="selectedColumn4">Select a column from File 2(@(TempData["Filename2"] ?? "No File 2 Uploaded")):</label>
                                     @Html.DropDownList("selectedColumn4", ViewBag.ColumnsList2 as SelectList, "Select a column", new { @class = "form-control" })
                                 </div>
                             </div>
@@ -73,6 +73,12 @@
                                 <input class="form-check-input" type="radio" name="joinType" id="antiJoin" value="antijoin">
                                 <label class="form-check-label" for="antiJoin">Anti Join</label>
                             </div>
+                            <center>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="concatenateJoin" id="concatenateJoin" value="concatenateJoin">
+                                    <label class="form-check-label" id="concatenateJoinLabel" for="concatenateJoin">Concatenate Join</label>
+                                </div>
+                            </center>
                         </div>
 
                         <button type="button" class="btn btn-primary btn-new" onclick="validateAndMerge()">Merge Files</button>
@@ -84,6 +90,53 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add onchange event handlers to selectedColumn3 and selectedColumn4 dropdowns
+        var selectedColumn3Dropdown = document.getElementById("selectedColumn3");
+        var selectedColumn4Dropdown = document.getElementById("selectedColumn4");
+
+        if (selectedColumn3Dropdown) {
+            selectedColumn3Dropdown.addEventListener('change', handleColumnSelectionChange);
+        }
+
+        if (selectedColumn4Dropdown) {
+            selectedColumn4Dropdown.addEventListener('change', handleColumnSelectionChange);
+        }
+
+        // Trigger the initial check
+        handleColumnSelectionChange();
+    });
+
+    function handleColumnSelectionChange() {
+        var selectedColumn3 = document.getElementById("selectedColumn3").value;
+        var selectedColumn4 = document.getElementById("selectedColumn4").value;
+        var radioButtons = document.getElementsByName("joinType");
+
+        // Check if selectedColumn3 or selectedColumn4 is selected
+        var isColumn3Selected = selectedColumn3 && selectedColumn3.trim() !== "";
+        var isColumn4Selected = selectedColumn4 && selectedColumn4.trim() !== "";
+
+        // Disable or enable radio buttons based on selection
+        radioButtons.forEach(function (radioButton) {
+            radioButton.disabled = isColumn3Selected || isColumn4Selected;
+        });
+
+        // Show or hide "Concatenate Join" radio button based on selection
+        var concatenateJoinRadio = document.getElementById("concatenateJoin");
+        var concatenateJoinLabel = document.getElementById("concatenateJoinLabel");
+        if (concatenateJoinRadio) {
+            if (isColumn3Selected || isColumn4Selected) {
+                concatenateJoinRadio.style.display = "inline-block";
+                concatenateJoinLabel.style.display = "inline-block";
+                // Set "Concatenate Join" as the default selection
+                concatenateJoinRadio.checked = true;
+            } else {
+                concatenateJoinRadio.style.display = "none";
+                concatenateJoinLabel.style.display = "none";
+            }
+        }
+    }
+
     function validateAndMerge() {
         var selectedColumn1 = document.getElementById("selectedColumn1").value;
         var selectedColumn2 = document.getElementById("selectedColumn2").value;

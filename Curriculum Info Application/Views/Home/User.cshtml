@@ -1,0 +1,56 @@
+﻿@model List<LoginModel>
+
+@{
+    ViewBag.Title = "User List";
+}
+
+<div class="container mt-4">
+    <h2>User List</h2>
+
+    <p class="text-success">@ViewBag.SuccessMessage</p>
+    <p class="text-danger">@ViewBag.ErrorMessage</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Admin Access</th>
+                <th>Set/Remove Admin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Email</td>
+                    <td>@user.Username</td>
+                    <td>@user.Password</td>
+                    <td>@user.isAdmin</td>
+                    <td>
+                        @if (user.Email != ViewBag.CurrentUserEmail)
+                        {
+                            @using (Html.BeginForm("DeleteUser", "Login", FormMethod.Post, new { @class = "d-inline" }))
+                            {
+                                @Html.Hidden("email", user.Email)
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @if (user.Email != ViewBag.CurrentUserEmail)
+                        {
+                            @using (Html.BeginForm("ToggleAdminStatus", "Login", FormMethod.Post, new { @class = "d-inline" }))
+                            {
+                                @Html.Hidden("email", user.Email)
+                                <button type="submit" class="btn btn-primary btn-sm">@((user.isAdmin ? "Remove Admin" : "Set Admin"))</button>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

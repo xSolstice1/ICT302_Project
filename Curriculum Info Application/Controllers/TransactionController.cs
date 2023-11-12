@@ -24,12 +24,15 @@ namespace Curriculum_Info_Application.Controllers
 
             // Process data for the Import Duration Matrix chart
             var importDurations = transactions.Select(t => t.import_duration).ToList();
-            var fileSizes = transactions.Select(t => t.merged_filesize).ToList();
+            // Calculate total filesize as the sum of filesize1, filesize2, and merged_filesize
+            var totalFileSizes = transactions
+                .Select(t => t.filesize1 + t.filesize2 + t.merged_filesize)
+                .ToList();
 
             // Create the chart data in the format required by Plotly
             var chartData = new
             {
-                x = fileSizes,
+                x = totalFileSizes,
                 y = importDurations,
                 type = "scatter",
                 mode = "markers",

@@ -35,6 +35,7 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Import()
         {
             TempData["SuccessMessage"] = null;
+            TempData["ErrMessage"] = null;
             TempData["CurrentPage"] = null;
             ViewBag.ColumnsList1 = new SelectList(new List<SelectListItem>(), "Value", "Text");
             ViewBag.ColumnsList2 = new SelectList(new List<SelectListItem>(), "Value", "Text");
@@ -56,7 +57,9 @@ namespace Curriculum_Info_Application.Controllers
             try
             {
                 TempData["LoginInfoMessage"] = null;
-                List<List<string>> records = new List<List<string>>();
+                TempData["Filename1"] = null;
+                TempData["Filename2"] = null;
+                List <List<string>> records = new List<List<string>>();
                 LoginModel loginModel = new LoginModel();
                 Transaction newTransaction = new Transaction();
                 DateTime start = DateTime.Now;
@@ -112,6 +115,8 @@ namespace Curriculum_Info_Application.Controllers
                 // Check files quantity
                 if (files.Count >= 2)
                 {
+                    TempData["Filename1"] = files.Count > 0 ? files[0].FileName : null;
+                    TempData["Filename2"] = files.Count > 1 ? files[1].FileName : null;
                     ViewBag.ColumnsList1 = new SelectList(model.columnHeadersList[0]);
                     ViewBag.ColumnsList2 = new SelectList(model.columnHeadersList[1]);
 
@@ -132,7 +137,9 @@ namespace Curriculum_Info_Application.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex}");
+                TempData["ErrMessage"] = ex.Message;
+                return View("Import");
+                //return StatusCode(500, $"Internal server error: {ex}");
             }
         }
 
@@ -195,43 +202,53 @@ namespace Curriculum_Info_Application.Controllers
 
                 using (var package = new ExcelPackage(file.OpenReadStream()))
                 {
-                    var worksheet = package.Workbook.Worksheets[0]; // Assuming you're working with the first worksheet
-                    var rowCount = worksheet.Dimension.Rows;
-                    var headerRecord = new List<string>();
-                    for (int col = 1; col <= worksheet.Dimension.Columns; col++)
+                    var worksheet = package.Workbook.Worksheets.FirstOrDefault(); // Use FirstOrDefault to get the first worksheet or null if not found
+                    if (worksheet != null)
                     {
-                        headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
-                    }
-
-                    for (int row = 1; row <= rowCount; row++)
-                    {
-                        var record = new List<string>();
+                        var rowCount = worksheet.Dimension.Rows;
+                        var headerRecord = new List<string>();
                         for (int col = 1; col <= worksheet.Dimension.Columns; col++)
                         {
-                            string line = worksheet.Cells[row, col].Text;
-                            if (row == 1)
-                            {
-                                // Replace all invalid characters with validChar
-                                foreach (var invalidChar in invalidChars)
-                                {
-                                    line = line.Replace(invalidChar, validChar);
-                                }
-                            }
-                            record.Add(line);
+                            headerRecord.Add(worksheet.Cells[1, col].Text); // Assuming header is in the first row
                         }
-                        records.Add(record);
+
+                        for (int row = 1; row <= rowCount; row++)
+                        {
+                            var record = new List<string>();
+                            for (int col = 1; col <= worksheet.Dimension.Columns; col++)
+                            {
+                                string line = worksheet.Cells[row, col].Text;
+                                if (row == 1)
+                                {
+                                    // Replace all invalid characters with validChar
+                                    foreach (var invalidChar in invalidChars)
+                                    {
+                                        line = line.Replace(invalidChar, validChar);
+                                    }
+                                }
+                                record.Add(line);
+                            }
+                            records.Add(record);
+                        }
+
+                        model.columnHeadersList.Add(headerRecord);
+                    }
+                    else
+                    {
+                        // Handle the case where the worksheet is null
+                        throw new Exception("The worksheet is null or empty.");
                     }
 
-                    model.columnHeadersList.Add(headerRecord);
+                    return records;
                 }
-
-                return records;
             }
             catch (Exception ex)
             {
+                // Handle the exception, e.g., log it, display an error message, etc.
                 throw new Exception("Error reading Excel file.", ex);
             }
         }
+
 
         private async Task SaveDataToXmlAsync(List<List<string>> records, int i)
         {
@@ -281,13 +298,17 @@ namespace Curriculum_Info_Application.Controllers
                 // Join the XML data based on the specified columns // jointype selected
                 if (!string.IsNullOrEmpty(selectedColumn3) || !string.IsNullOrEmpty(selectedColumn4)) {
                     joinedData = from record1 in data1Xml.Descendants("Record")
-                                let key1_1 = (string)record1.Element(selectedColumn1)
-                                let key2_1 = (string)record1.Element(selectedColumn3)
-                                from record2 in data2Xml.Descendants("Record")
-                                let key1_2 = (string)record2.Element(selectedColumn2)
-                                let key2_2 = (string)record2.Element(selectedColumn4)
-                                where key1_1 == key1_2 && key2_1 == key2_2
-                                select new XElement("Record", record1.Elements(), record2.Elements());
+                                 join record2 in data2Xml.Descendants("Record")
+                                 on new
+                                 {
+                                     Key1 = (string)record1.Element(selectedColumn1),
+                                     Key2 = (string)record1.Element(selectedColumn3)
+                                 } equals new
+                                 {
+                                     Key1 = (string)record2.Element(selectedColumn2),
+                                     Key2 = (string)record2.Element(selectedColumn4)
+                                 }
+                                 select new XElement("Record", record1.Elements(), record2.Elements());
                 }
                 else if (joinType.ToLower().Equals("innerjoin")) {
                     joinedData = from record1 in data1Xml.Descendants("Record")
@@ -454,6 +475,11 @@ namespace Curriculum_Info_Application.Controllers
             ViewBag.TableRecord = new Dictionary<string, List<string>>();
             return RedirectToAction("Index", "Export");
         }
+        public IActionResult User()
+        {
+            return RedirectToAction("Index", "Login");
+        }
+
         public IActionResult Index()
         {
             TempData["SuccessMessage"] = null;

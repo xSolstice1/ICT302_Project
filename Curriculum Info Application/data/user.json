@@ -1,7 +1,14 @@
 [
   {
-    "Email": "ck@gmail.com",
-    "Username": "CK",
-    "Password": "1"
+    "Email": "admin@murdoch.com",
+    "Username": "Admin",
+    "Password": "Admin@123",
+    "isAdmin": true
+  },
+  {
+    "Email": "tester@murdoch.com",
+    "Username": "Tester",
+    "Password": "Tester@123",
+    "isAdmin": false
   }
 ]

@@ -9,6 +9,7 @@ namespace Curriculum_Info_Application.Models
         public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public bool isAdmin { get; set; }
         private static readonly string _filePath = SystemConstant.USER_FILEPATH;
 
         public static bool insertNewUser(LoginModel info)
@@ -65,7 +66,7 @@ namespace Curriculum_Info_Application.Models
         }
 
 
-        public static string getUsernameByEmail(string email)
+        public static LoginModel getUserByEmail(string email)
         {
             try
             {
@@ -79,7 +80,7 @@ namespace Curriculum_Info_Application.Models
 
                     if (user != null)
                     {
-                        return user.Username;
+                        return user;
                     }
                 }
 
@@ -88,6 +89,25 @@ namespace Curriculum_Info_Application.Models
             catch (Exception ex)
             {
                 return null; // Handle exceptions
+            }
+        }
+
+        public static bool isAdminAcc()
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(SystemConstant.LOGIN_FILEPATH);
+                LoginModel user = JsonConvert.DeserializeObject<LoginModel>(jsonContent);
+                if(user.isAdmin == false)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false; // Handle exceptions
             }
         }
 
@@ -103,6 +123,88 @@ namespace Curriculum_Info_Application.Models
             catch (Exception ex)
             {
                 return null; // Handle exceptions
+            }
+        }
+
+        public static string GetCurrentEmail()
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(SystemConstant.LOGIN_FILEPATH);
+                LoginModel user = JsonConvert.DeserializeObject<LoginModel>(jsonContent);
+
+                return user.Email;
+            }
+            catch (Exception ex)
+            {
+                return null; // Handle exceptions
+            }
+        }
+
+        public static bool DeleteUserByEmail(string email)
+        {
+            try
+            {
+                if (File.Exists(_filePath))
+                {
+                    string json = File.ReadAllText(_filePath);
+                    List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+
+                    // Find the user with the specified email
+                    var userToRemove = users.Find(u => u.Email == email);
+
+                    if (userToRemove != null)
+                    {
+                        users.Remove(userToRemove); // Remove the user from the list
+
+                        // Serialize the updated list back to JSON and overwrite the file
+                        string updatedJson = JsonConvert.SerializeObject(users, Formatting.Indented);
+                        File.WriteAllText(_filePath, updatedJson);
+
+                        return true; // User deleted successfully
+                    }
+                }
+
+                return false; // User not found or file doesn't exist
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                return false;
+            }
+        }
+
+        public static bool UpdateUserAdminStatus(string email, bool isAdmin)
+        {
+            try
+            {
+                if (File.Exists(_filePath))
+                {
+                    string json = File.ReadAllText(_filePath);
+                    List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+
+                    // Find the user with the specified email
+                    var userToUpdate = users.Find(u => u.Email == email);
+
+                    if (userToUpdate != null)
+                    {
+                        // Update the isAdmin property
+                        userToUpdate.isAdmin = isAdmin;
+
+                        // Serialize the updated list back to JSON and overwrite the file
+                        string updatedJson = JsonConvert.SerializeObject(users, Formatting.Indented);
+                        File.WriteAllText(_filePath, updatedJson);
+
+                        return true; // User updated successfully
+                    }
+                }
+
+                return false; // User not found or file doesn't exist
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                return false;
             }
         }
 

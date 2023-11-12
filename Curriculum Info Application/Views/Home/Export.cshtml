@@ -36,8 +36,8 @@
                 <input type="text" id="@header.Key" class="form-control" placeholder="Search by @header.Value">
             </div>
         }
-        <button type="button" class="btn btn-primary" onclick="filterTable()">Search</button>
-        <button type="button" class="btn btn-secondary" onclick="clearFilters()">Clear</button>
+        <button type="button" class="btn btn-primary" onclick="filterTable()">Search(F2)</button>
+        <button type="button" class="btn btn-secondary" onclick="clearFilters()">Clear(F3)</button>
     </div>
 
     <div class="list-content">
@@ -94,6 +94,23 @@
 <script>
     document.getElementById('exportButton').addEventListener('click', function () {
         window.location.href = '@Url.Action("ExportToCsv", "Export")';
+    });
+
+    document.addEventListener('keydown', function (event) {
+        // Check if the pressed key is F2 (key code 113)
+        if (event.keyCode === 113) {
+            event.preventDefault(); // Prevent the default browser behavior for F2 (e.g., opening developer tools)
+
+            // Call the search function
+            filterTable();
+        }
+        // Check if the pressed key is F3 (key code 114)
+        if (event.keyCode === 114) {
+            event.preventDefault(); // Prevent the default browser behavior for F2 (e.g., opening developer tools)
+
+            // Call the search function
+            clearTable();
+        }
     });
 
     // Function to filter the table based on user input
