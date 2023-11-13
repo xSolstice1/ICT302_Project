@@ -593,5 +593,22 @@
     "merged_filesize": 4.9,
     "joinkey1": "Id | Id",
     "joinkey2": "Name | Name"
+  },
+  {
+    "transaction_datetime": "2023-11-13T21:30:15.8046974+08:00",
+    "user": "Tester",
+    "import_starttime": "2023-11-13T21:30:15.8046974+08:00",
+    "import_endtime": "2023-11-13T21:30:16.0498928+08:00",
+    "import_duration": 1812,
+    "file_qty": 2,
+    "filename1": "Book1.csv",
+    "filesize1": 0.0,
+    "filetype1": ".csv",
+    "filename2": "Book2.csv",
+    "filesize2": 0.0,
+    "filetype2": ".csv",
+    "merged_filesize": 0.3,
+    "joinkey1": "A | A",
+    "joinkey2": null
   }
 ]
