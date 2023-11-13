@@ -32,20 +32,20 @@
                     <td>
                         @if (user.Email != ViewBag.CurrentUserEmail)
                         {
-                            @using (Html.BeginForm("DeleteUser", "Login", FormMethod.Post, new { @class = "d-inline" }))
+                            @using (Html.BeginForm("ToggleAdminStatus", "Login", FormMethod.Post, new { @class = "d-inline" }))
                             {
                                 @Html.Hidden("email", user.Email)
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-primary btn-sm">@((user.isAdmin ? "Remove Admin" : "Set Admin"))</button>
                             }
                         }
                     </td>
                     <td>
                         @if (user.Email != ViewBag.CurrentUserEmail)
                         {
-                            @using (Html.BeginForm("ToggleAdminStatus", "Login", FormMethod.Post, new { @class = "d-inline" }))
+                            @using (Html.BeginForm("DeleteUser", "Login", FormMethod.Post, new { @class = "d-inline" }))
                             {
                                 @Html.Hidden("email", user.Email)
-                                <button type="submit" class="btn btn-primary btn-sm">@((user.isAdmin ? "Remove Admin" : "Set Admin"))</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             }
                         }
                     </td>

@@ -41,7 +41,7 @@ namespace Curriculum_Info_Application.Controllers
                 // Pager - Start
                 //===================================================
                 // Initialize pagination parameters
-                const int PageSize = 100; // Number of records per page
+                const int PageSize = 200; // Number of records per page
                 int currentPage = page ?? 1; // Default to the first page
 
                 // Calculate the number of records to skip based on the current page
@@ -91,6 +91,7 @@ namespace Curriculum_Info_Application.Controllers
                 ViewBag.CurrentPage = currentPage;
                 ViewBag.TotalPages = totalPages;
                 //ViewBag.RecordsForCurrentPage = recordsForCurrentPage;
+
                 ViewBag.TableHeaders = headers.ToDictionary(header => header, header => header);
                 ViewBag.TableRecord = recordsForCurrentPage;
 
