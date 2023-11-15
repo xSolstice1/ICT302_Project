@@ -87,7 +87,7 @@ namespace Curriculum_Info_Application.Controllers
         }
 
 
-        private List<Transaction> ReadTransactionDataFromJson()
+        public List<Transaction> ReadTransactionDataFromJson()
         {
             string json = null;
 

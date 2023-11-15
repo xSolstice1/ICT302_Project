@@ -49,10 +49,6 @@
               "target": "Package",
               "version": "[6.2.9, )"
             },
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[5.1.1, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -60,14 +56,6 @@
             "ServiceStack.Text": {
               "target": "Package",
               "version": "[6.11.0, )"
-            },
-            "System.Data.OleDb": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
             }
           },
           "imports": [

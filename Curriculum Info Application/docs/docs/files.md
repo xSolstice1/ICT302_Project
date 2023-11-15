@@ -150,5 +150,3 @@ string filePath: Path of the file.<br/>
 **Description:** Reads transaction data from the JSON file and deserializes it into a list of `Transaction` objects.<br/>
 
 **Return Type:** List<Transaction><br/>
-
-<hr class="solid">

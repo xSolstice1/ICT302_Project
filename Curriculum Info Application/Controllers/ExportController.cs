@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Xml.Linq;
+using Curriculum_Info_Application.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OfficeOpenXml;
@@ -152,7 +153,10 @@ namespace Curriculum_Info_Application.Controllers
                     MemoryStream stream = new MemoryStream(package.GetAsByteArray());
 
                     // Return the Excel file as a FileStreamResult
-                    return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "exportedData.xlsx");
+                    TransactionController temp = new TransactionController();
+                    Transaction transaction = temp.ReadTransactionDataFromJson().Last();
+                    string exportFilename = transaction.filename1.Trim() + "_" + (string.IsNullOrEmpty(transaction.filename2) ? "" : transaction.filename2.Trim()) + "_" + DateTime.Now.ToString().Trim() + ".xlsx";
+                    return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", exportFilename);
                 }
             }
             catch (Exception ex)
