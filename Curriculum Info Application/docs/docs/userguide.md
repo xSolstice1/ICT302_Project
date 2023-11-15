@@ -189,8 +189,8 @@ Registration failed. Please try again.
 <br/>
 
 ### 4: Merging Data
-###### - Click the "Merge Files" button to initiate the merge process.
-###### - The application will redirect to export page to display the merged data.
+##### - Click the "Merge Files" button to initiate the merge process.
+##### - The application will redirect to export page to display the merged data.
 
 <br/>
 
@@ -208,14 +208,152 @@ For further assistance, contact the system administrator.<br/>
 
 ## Export Screen
 
-![App Screenshot](https://i.ibb.co/LCLNKkR/app4.jpg)
+![Export screen](images/export.png)
 
-In the export screen, you can then manipulate the data by filtering them, selecting columns for export. <br>
-Once done, click on Export to Excel button to save the data.
+##### The Export Data feature allows you to view and export merged XML data to Excel. <br/><br/>
+#### Export Page Overview
+*The Export page provides the following features:*<br/>
+**Filter By:** *Narrow down the displayed data by entering search criteria for specific columns.*<br/>
+**Pagination:** *Navigate through the data with pagination controls.*<br/>
+**Export to Excel:** *Create an Excel file containing the displayed data.*<br/>
+
+#### Prerequisites
+*Before you begin, ensure you have already performed the data merge using the Merge Data feature.*<br/>
+
+<br/>
+
+### 1. Filter Data (Optional)
+![Export Filter](images/exportFilter.png)
+##### - Use the "Filter By" section to refine the displayed data.
+##### - Enter search criteria for specific columns.
+##### - Click the "Search (F2)" button to apply the filters.
+##### - Click the "Clear (F3)" button to reset filters.
+<br/>
+
+#### 2. Pagination
+![Export Pager](images/exportPager.png)
+##### - Navigate through the pages using the pagination controls.
+##### - The current page and total pages are displayed.
+<br/>
+
+### 3: Selecting Columns
+![Export Select Column](images/exportColumn.png)
+##### - By default, all columns are selected for export.
+##### - Uncheck columns using the checkboxes if you want to exclude them from the export.
+<br/>
+
+### 4: Export to Excel
+<button id="exportButton" class="btn btn-success">Export to Excel</button>
+##### - Click the "Export to Excel" button to generate an Excel file.
+##### - The file will contain the displayed data based on the applied filters and selected columns.
+<br/>
+
+*Additional Notes*<br/>
+**File Naming:** The exported file is named "exportedData.xlsx".<br/>
+**Column Selection:** Choose specific columns for export by unchecking the corresponding checkboxes.
+<br/>
+
+*Troubleshooting*<br/>
+If you encounter any issues during the merge process, an error message will be displayed. 
+Please review the error message and ensure that you have followed the instructions correctly.<br/>
+For further assistance, contact the system administrator.<br/>
 
 <hr class="solid">
 
-## Video Tutorial
+# Admin Guide
+
+## User Screen
+
+![User screen](images/admin.png)
+
+##### The Admin Management feature allows you to view and manage user accounts, including setting or removing admin privileges and deleting user accounts.
+<br/>
+
+##### The User List page displays a table with user information, including email, username, password, admin access status, and actions you can perform on each user.
+**Email:** User's email address.<br/>
+**Username:** User's username.<br/>
+**Password:** User's password (for display purposes only).<br/>
+**Admin Access:** Indicates whether the user has admin privileges.<br/>
+**Set/Remove Admin:** Button to toggle admin status for each user.<br/>
+**Actions:** Buttons to perform actions such as deleting a user.<br/>
+
+#### Prerequisites
+*Before you begin using the Admin Management functionality, ensure you have logged in to the application.*<br/>
+
+
+### 1. Viewing User Information
+![User screen](images/adminTable.png)
+##### The table displays user information, including email, username, password, and admin access status.
+<br/>
+
+#### 2. Setting/Removing Admin Access
+##### Locate the user for whom you want to change admin access.
+##### If the user's email is not the currently logged-in user's email:
+##### Click the "Set Admin" button to grant admin access.
+<button type="submit" class="btn btn-primary btn-sm">Set Admin</button>
+##### Click the "Remove Admin" button to revoke admin access.
+<button type="submit" class="btn btn-primary btn-sm">Remove Admin</button>
+<br/>
+
+### 3: Deleting a User
+<button type="submit" class="btn btn-danger btn-sm">Delete</button>
+##### Locate the user you want to delete,click the "Delete" button.
+<br/>
+
+*Additional Notes*<br/>
+**Current User Email:** The email address of the currently logged-in user is not allowed to perform actions on itself.<br/>
+<br/>
+
+<hr class="solid">
+
+## Dashboard Screen
+
+![Dahboard screen](images/dashboard.png)
+
+##### The Dashboard provides a comprehensive view of important statistics and transaction history. It includes visual representations such as charts for import duration, import rate by file type, and user usage. Additionally, it displays a table containing detailed transaction history.
+<br/>
+
+### Import Duration Matrix
+![Dahboard screen](images/importDuration.png)
+##### *Located in the left column of the dashboard.*
+##### - Represents the relationship between file size and import duration.
+##### - Each point on the chart corresponds to a transaction, showing the import duration based on the total file size.
+
+<br/>
+
+### Import Rate by File Type
+![Dahboard screen](images/importFileType.png)
+##### *Located in the left column of the dashboard.*
+##### - Represents the relationship between file size and import duration.
+##### - Each point on the chart corresponds to a transaction, showing the import duration based on the total file size.
+
+<br/>
+
+### User Usage Bar Chart
+![Dahboard screen](images/userUsage.png)
+##### *Located in the right column of the dashboard.*
+##### - Displays the number of transactions performed by each user.
+##### - Each bar represents a user, and its height indicates the transaction count.
+
+<br/>
+
+### Transaction History Table
+![Dahboard screen](images/transaction.png)
+##### *Located below the charts.*
+##### - Presents a detailed history of transactions.
+##### - Includes information such as date/time, user, import start/end time, filenames, file sizes, merged file size, process duration, and join keys.
+
+<br/>
+
+
+*Additional Notes*<br/>
+**Automated Transaction Cleanup:** Old transactions are automatically deleted to maintain data relevance, and his cleanup is performed upon accessing the Dashboard.<br/>
+**Interactive Charts:** Charts are interactive and respond to user actions. Hover over points or segments to view additional information. <br/>
+<br/>
+
+<hr class="solid">
+
+# Video Tutorial
 
 <video controls width="600" height="400">
     <source src="video.mp4" type="video/mp4">
