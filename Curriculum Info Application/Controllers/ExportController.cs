@@ -116,6 +116,11 @@ namespace Curriculum_Info_Application.Controllers
             {
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
+                if(string.IsNullOrEmpty(selectedColumns))
+                {
+                    return RedirectToAction("Index", "Export");
+                }
+
                 // Split the selected column names
                 var selectedColumnList = selectedColumns.Split(',');
 

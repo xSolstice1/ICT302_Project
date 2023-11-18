@@ -159,6 +159,12 @@
             }
         }
 
+        if (selectedColumns.length === 0) {
+            // Display an error message and return
+            alert('Please select at least one header.');
+            return;
+        }
+
         // Get the filter values
         var filters = {};
         var filterInputs = document.querySelectorAll('.search-gadget input[type="text"]');

@@ -129,6 +129,11 @@ namespace Curriculum_Info_Application.Controllers
         public IActionResult Signup(LoginModel model)
         {
             model.isAdmin = false;
+            if (LoginModel.valiadateSignup(model))
+            {
+                TempData["LoginErrorMessage"] = "Email already in used.";
+                return View("~/Views/Home/Index.cshtml");
+            }
             if (LoginModel.insertNewUser(model))
             {
                 TempData["LoginSuccessMessage"] = "Account created.";

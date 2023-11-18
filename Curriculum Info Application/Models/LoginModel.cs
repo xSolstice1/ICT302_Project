@@ -65,6 +65,27 @@ namespace Curriculum_Info_Application.Models
             }
         }
 
+        public static bool valiadateSignup(LoginModel info)
+        {
+            try
+            {
+                if (File.Exists(_filePath))
+                {
+                    string json = File.ReadAllText(_filePath);
+                    List<LoginModel> users = JsonConvert.DeserializeObject<List<LoginModel>>(json);
+
+                    // Check if user credentials match any user in the list
+                    return users.Any(user => user.Email == info.Email);
+                }
+
+                return false; // File not found, no matching user
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
 
         public static LoginModel getUserByEmail(string email)
         {
