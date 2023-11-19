@@ -356,6 +356,5 @@ For further assistance, contact the system administrator.<br/>
 # Video Tutorial
 
 <video controls width="600" height="400">
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    <source src="../images/UserGuide.mp4" type="video/mp4">
 </video>
